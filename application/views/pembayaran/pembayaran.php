@@ -30,7 +30,7 @@
 					<input type="text" name="nomor" placeholder="Wajib Menggunakan Nomor WA Yang Aktif!" class="form-control">
 					<?php echo form_error('nomor', '<div class="text-danger small">', '</div>') ?>
 				</div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label>Jasa Pengiriman</label>
 					<select class="form-control" name="kurir">
 						<option value="" disable selected hidden>Pilih Jasa Pengiriman</option>
@@ -41,7 +41,7 @@
 						<option value="Grap">Grab</option>
 					</select>
 					<?php echo form_error('kurir', '<div class="text-danger small">', '</div>') ?>
-				</div>
+				</div> -->
 				<div class="form-group">
 					<label>Metode Pembayaran</label>
 					<select class="form-control">

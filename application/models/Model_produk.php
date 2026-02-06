@@ -2,7 +2,7 @@
 	
 class Model_produk extends CI_Model{
 	public function tampil_data($limit, $start){
-		return $this->db->get('produk', $limit, $start);
+		return $this->db->order_by('id_produk', 'DESC')->get('produk', $limit, $start);
 	}
 
 	public function tampil_data_keranjang(){
@@ -10,7 +10,7 @@ class Model_produk extends CI_Model{
 	}
 
 	public function tampil_data_admin(){
-		return $this->db->get('produk');
+		return $this->db->order_by('id_produk', 'DESC')->get('produk');
 	}
 
 	public function tambah_data($data,$table){
@@ -32,8 +32,9 @@ class Model_produk extends CI_Model{
 	}
 
 	public function find($id){
-		$result = $this->db->where('id_produk', $id) 
-						   ->limit(1) 
+		$result = $this->db->where('id_produk', $id)
+						   ->order_by('id_produk', 'DESC')
+						   ->limit(1)
 						   ->get('produk');	
 
 		if($result->num_rows() > 0){

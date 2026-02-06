@@ -1,9 +1,9 @@
 <div class="container kategori margin-bot">
 	<div class="title-kategori">
-		<h3>Kategori Printer</h3>
+		<h3>Jenis Jaket</h3>
 	</div>
     <div class="row">
-        <?php foreach ($printer as $brg) : ?>
+        <?php foreach ($jaket as $brg) : ?>
             <div class="mt-5 col-lg-3 col-6 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
                     <img src="<?php echo base_url() ?>assets/uploads/<?php echo $brg->gambar ?>" class="card-img-top" alt="...">

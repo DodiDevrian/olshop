@@ -44,10 +44,6 @@ class Produk extends CI_Controller{
 				'required' => 'Merek wajib diisi!']);
 		$this->form_validation->set_rules('harga', 'Harga', 'required',[
 				'required' => 'Harga wajib diisi!']);
-		$this->form_validation->set_rules('stok', 'stok', 'required',[
-				'required' => 'Stok wajib diisi!']);
-		$this->form_validation->set_rules('masa_garansi', 'Masa Garansi', 'required',[
-				'required' => 'Masa Garansi wajib diisi!']);
 		$this->form_validation->set_rules('detail_produk', 'Detail Produk', 'required',[
 				'required' => 'Detail Produk wajib diisi!']);
 		$this->form_validation->set_rules('kategori', 'Kategori', 'required',[
@@ -67,8 +63,7 @@ class Produk extends CI_Controller{
 			$nama_produk	= $this->input->post('nama_produk');
 			$merek			= $this->input->post('merek');
 			$harga			= $this->input->post('harga');
-			$stok			= $this->input->post('stok');
-			$masa_garansi	= $this->input->post('masa_garansi');
+			$stok			= 1;
 			$detail_produk	= $this->input->post('detail_produk');
 			$kategori		= $this->input->post('kategori');
 			$gambar			= $_FILES['gambar']['name'];
@@ -89,7 +84,6 @@ class Produk extends CI_Controller{
 				'merek'			=> $merek,
 				'harga'			=> $harga,
 				'stok'			=> $stok,
-				'masa_garansi'	=> $masa_garansi,
 				'detail_produk'	=> $detail_produk,
 				'kategori'		=> $kategori,
 				'gambar'		=> $gambar

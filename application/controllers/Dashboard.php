@@ -87,6 +87,22 @@ class Dashboard extends CI_Controller{
 		$this->load->view('templates/footer');
 	}
 
+	public function beli($id){
+		$barang = $this->Model_produk->find($id);
+
+		$data = array(
+	        'id'      => $barang->id_produk,
+	        'gambar'  => $barang->gambar,
+	        'qty'     => 1,
+	        'price'   => $barang->harga,
+	        'name'    => $barang->nama_produk
+		);
+
+		$this->cart->insert($data);
+		redirect('dashboard/pembayaran');
+
+	}
+
 	public function hapus_keranjang(){
 		$this->cart->destroy();
 		redirect('dashboard');

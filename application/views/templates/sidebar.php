@@ -22,7 +22,7 @@
 
                         <a class="nav-link" href="<?php echo base_url()?>dashboard">
                             <i class="fa-solid fa-house"></i>
-                            <span>Dashboard</span></a>
+                            <span>Home</span></a>
                     </li>
 
                     <!-- Heading -->
@@ -32,51 +32,38 @@
 
                     
                     <!-- Nav Item - Charts -->
-                    <li class="nav-item <?php echo menuAktif('laptop') ?>">
-                        <a class="nav-link" href="<?php echo base_url()?>laptop">
-                            <iconify-icon icon="emojione-monotone:laptop-computer"></iconify-icon>
-                            <span>LAPTOP</span></a>
+                    <li class="nav-item <?php echo menuAktif('kemeja') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>kemeja">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>KEMEJA</span></a>
                     </li>
 
-                    <li class="nav-item <?php echo menuAktif('proyektor') ?>">
-                        <a class="nav-link" href="<?php echo base_url()?>proyektor">
-                            <iconify-icon icon="teenyicons:usb-cable-solid"></iconify-icon>
-                            <span>KOMPONEN</span></a>
+                    <li class="nav-item <?php echo menuAktif('kaos') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>kaos">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>KAOS</span></a>
                     </li>
 
-                    <li class="nav-item <?php echo menuAktif('printer') ?>">
-                        <a class="nav-link" href="<?php echo base_url()?>printer">
-                            <iconify-icon icon="emojione-monotone:printer"></iconify-icon>
-                            <span>PRINTER</span></a>
+                    <li class="nav-item <?php echo menuAktif('jaket') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jaket">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>JAKET</span></a>
+                    </li>
+
+                    <li class="nav-item <?php echo menuAktif('sweater') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>sweater">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>SWEATER</span></a>
                     </li>
 
                     <!-- Nav Item - Tables -->
                     <li class="nav-item <?php echo menuAktif('aksesoris') ?>">
-                        <a class="nav-link" href="<?php echo base_url()?>aksesoris">
-                            <iconify-icon icon="emojione-monotone:headphone"></iconify-icon>
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>aksesoris">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
                             <span>AKSESORIS</span></a>
                     </li>
 
                     <!-- Divider -->
-
-                    <?php if($this->session->userdata('username')) { ?>
-                    <div class="sidebar-heading-s">
-                        MENU :
-                    </div>
-
-                    <li class="nav-item <?php echo menuAktif('service') ?>">
-                        <a class="nav-link" href="<?php echo base_url()?>service/service">
-                            <iconify-icon icon="icon-park-outline:setting-laptop"></iconify-icon>
-                            <span>FORM SERVICE</span>
-                        </a>
-                    </li>
-                    <li class="nav-item <?php echo menuAktif('list_service') ?>">
-                        <a class="nav-link" href="<?php echo base_url()?>service/list_service">
-                            <iconify-icon icon="icon-park-outline:setting-laptop"></iconify-icon>
-                            <span>LIST SERVICE</span>
-                        </a>
-                    </li>
-                    <?php } ?>
                 </div>
 
                 <!-- Sidebar Toggler (Sidebar) -->

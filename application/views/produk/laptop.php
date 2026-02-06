@@ -4,8 +4,8 @@
 	</div>
     <div class="row">
         <?php foreach ($laptop as $brg) : ?>
-            <div class="mt-5 col-lg-3">
-                <div class="card" style="width: 18rem; height: 542px;">
+            <div class="mt-5 col-lg-3 col-6 d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
                     <img src="<?php echo base_url() ?>assets/uploads/<?php echo $brg->gambar ?>" class="card-img-top" alt="...">
                     <div class="card-body text-center flex-bedge">
                         <div class="reg1">
@@ -13,12 +13,12 @@
                             </span><br>
                         </div>
                         <div class="reg1 text-start">
-                                <?php if ($brg->stok > 0) {
+                                <!-- <?php if ($brg->stok > 0) {
                                     echo "<span class='badge rounded-pill bg-success text-start mt-2'>Ready</span>";
                                 }else{
                                     echo "<span class='badge rounded-pill bg-danger text-start mt-2'>Kosong</span>";
                                 }
-                                ?>
+                                ?> -->
                             <p class="text-start harga">Rp  <?php echo number_format($brg->harga)  ?></p>
                             <?php if($this->session->userdata('username')) { ?>
                                 <?php if ($brg->stok > 0) {

@@ -24,7 +24,6 @@
     background: #3d63d2;
     color: white;
     margin-top: 30px;
-    position: absolute;
     width: -webkit-fill-available;
     bottom: 0;
     padding: 2rem 0;
@@ -299,10 +298,6 @@ nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow.nav
 
 .navbar-fix {
     position: fixed;
-}
-
-.margin-bot {
-    margin-bottom: 300px;
 }
 
 .bg-website{
