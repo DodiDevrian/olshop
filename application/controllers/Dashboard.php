@@ -13,6 +13,7 @@ class Dashboard extends CI_Controller{
 	}
 
 	public function index() {
+		$data['barang'] = $this->Model_produk->tampil_data_keranjang()->result();
 
 		$config['base_url'] 	= site_url('dashboard/index');
 		$config['total_rows'] 	= $this->db->count_all('produk');

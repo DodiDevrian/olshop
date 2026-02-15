@@ -1,20 +1,44 @@
-<div class="container-fluid" style="margin-bottom: 250px;">
-	<div id="content">
-	    <!-- Begin Page Content -->
-	    <div class="container-fluid">
-
-	        <!-- Page Heading -->
-	        <div class="top-bar">	
-	        	<h1 class="h3 mb-2 text-gray-800">PRODUK</h1>
-	        	<a href="produk/tambah_produk" class="btn-tambah-user">
-	        		<button type="button" class="btn btn-primary">+ Tambah Produk</button>
-	        	</a>
-	        </div>
-	        <!-- DataTales Example -->
-	        <div class="card shadow mb-4">
-	            <div class="card-body">
-	                <div class="table-responsive">
-	                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <div class="container">
+          <div class="page-inner">
+            <div class="page-header">
+              <h3 class="fw-bold mb-3">Data Produk</h3>
+              <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                  <a href="#">
+                    <i class="icon-home"></i>
+                  </a>
+                </li>
+                <li class="separator">
+                  <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                  <a href="#">Home</a>
+                </li>
+                <li class="separator">
+                  <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                  <a href="#">Data Produk</a>
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="d-flex align-items-center">
+                        <h4 class="card-title">Produk</h4>
+                        <a href="<?= base_url('admin/produk/tambah_produk') ?>"
+                                class="btn btn-primary btn-round ms-auto"
+                            >
+                                <i class="fa fa-plus"></i>
+                                Tambah Produk
+                        </a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 	                        <thead>
 	                            <tr>
 	                                <th>No</th>
@@ -22,7 +46,6 @@
 	                                <th>Merek</th>
 	                                <th>Harga</th>
 	                                <th>Stok</th>
-	                                <th>Garansi</th>
 	                                <th>Kategori</th>
 	                                <th>Gambar</th>
 	                                <th></th>
@@ -39,7 +62,6 @@
 	                                <td><?php echo $brg->merek ?></td>
 	                                <td>Rp. <?php echo number_format($brg->harga,0,',','.') ?></td>
 	                                <td><?php echo $brg->stok ?></td>
-	                                <td><?php echo $brg->masa_garansi ?></td>
 	                                <td><?php echo $brg->kategori ?></td>
 	                                <td class="img-btn">
 	                                	<img src="<?php echo base_url() ?>assets/uploads/<?php echo $brg->gambar ?>" width="50px">
@@ -57,9 +79,10 @@
 	                        	<?php endforeach; ?>
 	                        </tbody>
 	                    </table>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>

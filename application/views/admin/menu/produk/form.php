@@ -35,6 +35,7 @@
 				    <option value="Kaos"><button class="dropdown-item" type="button">Kaos</button></option>
 				    <option value="Jaket"><button class="dropdown-item" type="button">Jaket</button></option>
 				    <option value="Sweater"><button class="dropdown-item" type="button">Sweater</button></option>
+				    <option value="Celana"><button class="dropdown-item" type="button">Celana</button></option>
 				  </select>
 				<?php echo form_error('kategori', '<div class="text-danger small">', '</div>') ?>
 				</div>

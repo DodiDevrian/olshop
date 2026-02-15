@@ -1,12 +1,14 @@
 <div class="container kategori margin-bot">
 	<div class="title-kategori">
-		<h3>Jenis Jaket</h3>
+		<h3>Jaket</h3>
 	</div>
     <div class="row">
         <?php foreach ($jaket as $brg) : ?>
             <div class="mt-5 col-lg-3 col-6 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
-                    <img src="<?php echo base_url() ?>assets/uploads/<?php echo $brg->gambar ?>" class="card-img-top" alt="...">
+                    <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                        <img src="<?php echo base_url() ?>assets/uploads/<?php echo $brg->gambar ?>" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                    </div>
                     <div class="card-body text-center flex-bedge">
                         <div class="reg1">
                             <h5 class="card-title text-start"><?php echo character_limiter($brg->nama_produk, 45); ?></h5>

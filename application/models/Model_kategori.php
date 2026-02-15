@@ -37,28 +37,12 @@ class Model_kategori extends CI_Model{
 		return $this->db->get_where("produk",array('kategori' => 'cardigan'),$limit, $start);
 	}
 
-	public function data_jeans($limit, $start){
-		return $this->db->get_where("produk",array('kategori' => 'jeans'),$limit, $start);
-	}
-
-	public function data_kolor($limit, $start){
-		return $this->db->get_where("produk",array('kategori' => 'kolor'),$limit, $start);
-	}
-
-	public function data_kulot($limit, $start){
-		return $this->db->get_where("produk",array('kategori' => 'kulot'),$limit, $start);
-	}
-
-	public function data_training($limit, $start){
-		return $this->db->get_where("produk",array('kategori' => 'training'),$limit, $start);
-	}
-
 	public function data_dasar($limit, $start){
 		return $this->db->get_where("produk",array('kategori' => 'dasar'),$limit, $start);
 	}
 
-	public function data_chinos($limit, $start){
-		return $this->db->get_where("produk",array('kategori' => 'chinos'),$limit, $start);
+	public function data_celana($limit, $start){
+		return $this->db->get_where("produk",array('kategori' => 'celana'),$limit, $start);
 	}
 	
 } 

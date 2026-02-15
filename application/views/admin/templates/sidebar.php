@@ -47,12 +47,6 @@
                     <span>USER</span></a>
             </li>
 
-            <li class="nav-item <?php echo menuAktif('service') ?>">
-                <a class="nav-link" href="<?php echo base_url()?>admin/service">
-                    <iconify-icon icon="heroicons:wrench-screwdriver-20-solid"></iconify-icon>
-                    <span>SERVICE</span></a>
-            </li>
-
             <!-- Nav Item - Tables -->
             <li class="nav-item <?php echo menuAktif('invoice') ?>">
                 <a class="nav-link" href="<?php echo base_url()?>admin/invoice">

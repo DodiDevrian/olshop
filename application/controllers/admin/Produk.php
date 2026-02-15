@@ -20,11 +20,11 @@ class Produk extends CI_Controller{
 
 		$data['barang'] = $this->Model_produk->tampil_data_admin()->result();
 
-		$this->load->view('admin/templates/header');
-		$this->load->view('admin/templates/sidebar');
-		$this->load->view('admin/templates/navbar');
+		$this->load->view('admin/templates2/header');
+		$this->load->view('admin/templates2/sidebar');
+		$this->load->view('admin/templates2/navbar');
 		$this->load->view('admin/menu/produk/list-produk', $data);
-		$this->load->view('admin/templates/footer');
+		$this->load->view('admin/templates2/footer');
 	}
 
 	public function tambah_produk(){

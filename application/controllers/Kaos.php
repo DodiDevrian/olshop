@@ -45,7 +45,7 @@ class Kaos extends CI_Controller{
 		$this->pagination->initialize($config);
 		$data['page']			= ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data['laptop'] = $this->Model_kategori->data_kaos($config["per_page"], $data['page'])->result();
+		$data['kaos'] = $this->Model_kategori->data_kaos($config["per_page"], $data['page'])->result();
 
 		$data['pagination'] = $this->pagination->create_links();
 

@@ -18,7 +18,6 @@
 	                                <th>Alamat Pengiriman</th>
 	                                <th>Tanggal Pemesanan</th>
 	                                <th>Nomor HP</th>
-	                                <th>Kurir</th>
 	                                <th>Bukti Pembayaran</th>
 	                                <th>Status</th>
 	                                <th>&nbsp;</th>
@@ -31,7 +30,7 @@
 	                            foreach ($invoice as $inv) : ?>
 	                            <tr>
 	                            	<td><?php echo $no++ ?></td>
-	                            	<td>MDC-INV-<?php echo $inv->id ?></td>
+	                            	<td>SHOP-INV-<?php echo $inv->id ?></td>
 	                                <td><?php echo $inv->nama ?></td>
 	                                <td><?php echo $inv->alamat ?></td>
 	                                <td>
@@ -85,7 +84,6 @@
 										?>
 	                                </td>
 	                                <td><?php echo $inv->nomor ?></td>
-	                                <td><?php echo $inv->kurir ?></td>
 	                                <td><img src="<?php echo base_url() ?>assets/uploads/bukti/<?php echo $inv->gambar ?>" width="50px"></td>
 	                                <td class="img-btn">
 	                                	<?php if ($inv->status == 'Menunggu Validasi') { ?>
@@ -96,9 +94,11 @@
 	                                		<?php echo anchor('https://wa.me/62'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: MDC-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0AKurir : '.$inv->kurir.'%0A%0APembayaran sudah tervalidasi.',  '<iconify-icon icon="logos:whatsapp-icon"></iconify-icon>') ?> 
 	                                	<?php } ?>
 	                                </td>
-	                                <td align="center">
-	                                	<?php echo anchor('admin/invoice/detail/'.$inv->id, '<div class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></iconify-icon></div>') ?>
-	                                	<?php echo anchor('admin/invoice/edit/' .$inv->id, '<div class="btn btn-secondary btn-sm"><li class="fa fa-edit"></li></div>') ?>
+	                                <td>
+										<div class="d-flex gap-2">
+											<a href="<?= base_url('admin/invoice/detail/'.$inv->id) ?>"><div class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></iconify-icon></div></a>
+											<a href="<?= base_url('admin/invoice/edit/'.$inv->id) ?>"><div class="btn btn-sm btn-secondary"><i class="fa-solid fa-edit"></i></iconify-icon></div></a>
+										</div>
 	                                </td>
 
 	                            </tr>

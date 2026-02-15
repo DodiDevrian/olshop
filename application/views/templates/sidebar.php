@@ -56,13 +56,11 @@
                             <span>SWEATER</span></a>
                     </li>
 
-                    <!-- Nav Item - Tables -->
-                    <li class="nav-item <?php echo menuAktif('aksesoris') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>aksesoris">
+                    <li class="nav-item <?php echo menuAktif('celana') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>celana">
                             <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>AKSESORIS</span></a>
+                            <span>CELANA</span></a>
                     </li>
-
                     <!-- Divider -->
                 </div>
 

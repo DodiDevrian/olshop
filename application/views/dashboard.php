@@ -33,31 +33,27 @@
         <?php foreach ($barang as $brg) : ?>
             <div class="mt-5 col-lg-3 col-6 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
-                    <img src="<?php echo base_url() ?>assets/uploads/<?php echo $brg->gambar ?>" class="card-img-top" alt="...">
-                    <div class="card-body text-center flex-bedge">
-                        <div class="reg1">
-                            <h5 class="card-title text-start"><?php echo character_limiter($brg->nama_produk, 45); ?></h5>
-                            </span><br>
-                        </div>
-                        <div class="reg1 text-start">
-                                <!-- <?php if ($brg->stok > 0) {
-                                    echo "<span class='badge rounded-pill bg-success text-start mt-2'>Ready</span>";
-                                }else{
-                                    echo "<span class='badge rounded-pill bg-danger text-start mt-2'>Kosong</span>";
-                                }
-                                ?> -->
-                            <p class="text-start harga">Rp  <?php echo number_format($brg->harga)  ?></p>
-                            <?php if($this->session->userdata('username')) { ?>
-                                <?php if ($brg->stok > 0) {
-                                    echo anchor('dashboard/keranjang/'. $brg->id_produk, '<div class="btn btn-primary bg-gradient">Tambah Keranjang</div>');
-                                }else{
-                                    echo '<div class="btn btn-primary bg-gradient" data-toggle="modal" data-target="#stok0">Tambah Keranjang</div>';
-                                }
-                                ?>
-                            <?php } ?>
-                            <?php echo anchor('dashboard/detail/'. $brg->id_produk, '<div class="btn btn-success bg-gradient">Detail</div>') ?>
-                        </div>
-                    </div>
+                  <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                    <img src="<?php echo base_url() ?>assets/uploads/<?php echo $brg->gambar ?>" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                  </div>
+                  <div class="card-body text-center flex-bedge">
+                      <div class="reg1">
+                          <h5 class="card-title text-start"><?php echo character_limiter($brg->nama_produk, 45); ?></h5>
+                          </span><br>
+                      </div>
+                      <div class="reg1 text-start">
+                          <p class="text-start harga">Rp  <?php echo number_format($brg->harga)  ?></p>
+                          <?php if($this->session->userdata('username')) { ?>
+                              <?php if ($brg->stok > 0) {
+                                  echo anchor('dashboard/keranjang/'. $brg->id_produk, '<div class="btn btn-primary bg-gradient">Tambah Keranjang</div>');
+                              }else{
+                                  echo '<div class="btn btn-primary bg-gradient" data-toggle="modal" data-target="#stok0">Tambah Keranjang</div>';
+                              }
+                              ?>
+                          <?php } ?>
+                          <?php echo anchor('dashboard/detail/'. $brg->id_produk, '<div class="btn btn-success bg-gradient">Detail</div>') ?>
+                      </div>
+                  </div>
                 </div>  
             </div>
         <?php endforeach; ?>
