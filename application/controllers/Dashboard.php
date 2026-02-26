@@ -54,11 +54,11 @@ class Dashboard extends CI_Controller{
 		$data['barang'] = $this->Model_produk->tampil_data($config["per_page"], $data['page'])->result();
 		
 
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('templates/navbar');
-		$this->load->view('dashboard', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates2/header');
+		$this->load->view('templates2/navbar');
+		$this->load->view('templates2/sidebar');
+		$this->load->view('dashboard2', $data);
+		$this->load->view('templates2/footer');
 	}
 
 	public function keranjang($id){
@@ -111,11 +111,11 @@ class Dashboard extends CI_Controller{
 
 	public function detail($id_produk){
 		$data['barang'] = $this->Model_produk->detail_produk($id_produk);
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('templates/navbar');
+		$this->load->view('templates2/header');
+		$this->load->view('templates2/navbar');
+		$this->load->view('templates2/sidebar');
 		$this->load->view('detail', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates2/footer');
 	}
 
 	public function pembayaran(){

@@ -12,11 +12,11 @@ class Invoice extends CI_Controller{
 	public function index(){
 		$data['invoice'] = $this->Model_invoice->tampil_data();
 
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('templates/navbar');
+		$this->load->view('templates2/header');
+		$this->load->view('templates2/navbar');
+		$this->load->view('templates2/sidebar');
 		$this->load->view('invoice/list_invoice', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates2/footer');
 	}
 
 	public function detail($id_invoice){

@@ -11,7 +11,7 @@ class Kemeja extends CI_Controller{
 
 	public function index() {
 		$config['base_url'] 	= site_url('kemeja/index');
-		$config['total_rows'] 	= $this->db->where('kategori','Kemeja')->from("produk")->count_all_results();
+		$config['total_rows'] 	= $this->db->where('kategori','kemeja')->from("produk")->count_all_results();
 		$config["per_page"]		= 12;
 		$config['uri_segment'] 	= 3;
 		$choice					= $config["total_rows"] / $config['per_page'];
@@ -49,10 +49,10 @@ class Kemeja extends CI_Controller{
 
 		$data['pagination'] = $this->pagination->create_links();
 
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('templates/navbar');
+		$this->load->view('templates2/header');
+		$this->load->view('templates2/navbar');
+		$this->load->view('templates2/sidebar');
 		$this->load->view('produk/kemeja', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates2/footer');
 	}
 }

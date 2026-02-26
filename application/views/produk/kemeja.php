@@ -1,57 +1,73 @@
-<div class="container kategori margin-bot">
-	<div class="title-kategori">
-		<h3>Kemeja</h3>
-	</div>
-    <div class="row">
-        <?php foreach ($kemeja as $brg) : ?>
-            <div class="mt-5 col-lg-3 col-6 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
-                        <img src="<?php echo base_url() ?>assets/uploads/<?php echo $brg->gambar ?>" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                    </div>
-                    <div class="card-body text-center flex-bedge">
-                        <div class="reg1">
-                            <h5 class="card-title text-start"><?php echo character_limiter($brg->nama_produk, 45); ?></h5>
-                            </span><br>
+<main>
+    <div class="container kategori margin-bot mt-3">
+        <div class="title-kategori">
+            <h3>Kemeja</h3>
+        </div>
+        <div class="row">
+            <?php foreach ($kemeja as $brg) : ?>
+                <?php if ($brg->stok > 0) { ?>
+                    <div class="mt-5 col-lg-3 col-6 d-flex">
+                        <div class="card" style="width: 18rem;">
+                        <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                            <img src="<?php echo base_url() ?>assets/uploads/<?php echo $brg->gambar ?>" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                         </div>
-                        <div class="reg1 text-start">
-                                <!-- <?php if ($brg->stok > 0) {
-                                    echo "<span class='badge rounded-pill bg-success text-start mt-2'>Ready</span>";
-                                }else{
-                                    echo "<span class='badge rounded-pill bg-danger text-start mt-2'>Kosong</span>";
-                                }
-                                ?> -->
-                            <p class="text-start harga">Rp  <?php echo number_format($brg->harga)  ?></p>
-                            <?php if($this->session->userdata('username')) { ?>
-                                <?php if ($brg->stok > 0) {
-                                    echo anchor('dashboard/keranjang/'. $brg->id_produk, '<div class="btn btn-primary bg-gradient">Tambah Keranjang</div>');
-                                }else{
-                                    echo '<div class="btn btn-primary bg-gradient" data-toggle="modal" data-target="#stok0">Tambah Keranjang</div>';
-                                }
-                                ?>
-                            <?php } ?>
-                            <?php echo anchor('dashboard/detail/'. $brg->id_produk, '<div class="btn btn-success bg-gradient">Detail</div>') ?>
-                        </div>
-                    </div>
-                </div>  
-            </div>
-        <?php endforeach; ?>
-    </div>
-    <div class="col mt-5"><?php echo $pagination; ?></div>
-</div>
+                        <div class="card-body text-center flex-bedge d-flex flex-column">
+                            <div class="reg1">
+                                <h5 class="card-title text-start"><?php echo character_limiter($brg->nama_produk, 45); ?></h5>
+                                </span><br>
+                            </div>
+                            <div class="reg1 text-start mt-auto">
+                                <p class="text-start harga">Rp  <?php echo number_format($brg->harga)  ?></p>
+                                <div class="row">
+                                    <?php if($this->session->userdata('username')) { ?>
+                                        <?php if ($brg->stok > 0) { ?>
+                                            <div class="col-12 col-md-6 mb-2">
+                                                <a href="<?= base_url('dashboard/keranjang/'). $brg->id_produk ?>" 
+                                                class="btn btn-warning bg-gradient w-100">
+                                                <i class="fas fa-cart-arrow-down"></i>
+                                                </a>
+                                            </div>
+                                        <?php } else { ?>
+                                            <div class="col-12 col-md-6 mb-2">
+                                                <button class="btn btn-primary bg-gradient w-100" 
+                                                        data-toggle="modal" 
+                                                        data-target="#stok0">
+                                                    + Keranjang
+                                                </button>
+                                            </div>
+                                        <?php } ?>
+                                    <?php } ?>
 
-<div class="modal fade" id="stok0" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Stok Abis</h5>
-      </div>
-      <div class="modal-body">
-        Maaf, Stok Barang Habis
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+                                    <div class="col-12 col-md-6 mb-2">
+                                        <a href="<?= base_url('dashboard/detail/'. $brg->id_produk) ?>" 
+                                        class="btn btn-success bg-gradient w-100">
+                                        Detail
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>  
+                    </div>
+                <?php } ?>
+            <?php endforeach; ?>
+        </div>
+        <div class="col mt-5"><?php echo $pagination; ?></div>
     </div>
-  </div>
-</div>
+
+    <div class="modal fade" id="stok0" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Stok Abis</h5>
+        </div>
+        <div class="modal-body">
+            Maaf, Stok Barang Habis
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</main>

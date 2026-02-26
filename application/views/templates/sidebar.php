@@ -32,35 +32,108 @@
 
                     
                     <!-- Nav Item - Charts -->
+                    <li class="nav-item <?php echo menuAktif('tshirt') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>tshirt">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>T-shirt</span></a>
+                    </li>
+                    
+                    <li class="nav-item <?php echo menuAktif('olahraga') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>olahraga">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Pakaian Olahraga</span></a>
+                    </li>
+
                     <li class="nav-item <?php echo menuAktif('kemeja') ?>">
                         <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>kemeja">
                             <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>KEMEJA</span></a>
+                            <span>Kemeja</span></a>
                     </li>
 
-                    <li class="nav-item <?php echo menuAktif('kaos') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>kaos">
+                    <li class="nav-item <?php echo menuAktif('jaketpria') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jaketpria">
                             <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>KAOS</span></a>
+                            <span>Jaket Pria</span></a>
                     </li>
 
-                    <li class="nav-item <?php echo menuAktif('jaket') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jaket">
+                    <li class="nav-item <?php echo menuAktif('jaketwanita') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jaketwanita">
                             <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>JAKET</span></a>
+                            <span>Jaket Wanita</span></a>
+                    </li>
+
+                    <li class="nav-item <?php echo menuAktif('jaketkulit') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jaketkulit">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Jaket Kulit</span></a>
                     </li>
 
                     <li class="nav-item <?php echo menuAktif('sweater') ?>">
                         <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>sweater">
                             <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>SWEATER</span></a>
+                            <span>Sweater</span></a>
                     </li>
 
-                    <li class="nav-item <?php echo menuAktif('celana') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>celana">
+                    <li class="nav-item <?php echo menuAktif('hoodie') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>hoodie">
                             <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>CELANA</span></a>
+                            <span>Hoodie</span></a>
                     </li>
+
+                    <li class="nav-item <?php echo menuAktif('flanel') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>flanel">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Flanel</span></a>
+                    </li>
+
+                    <li class="nav-item <?php echo menuAktif('jeans') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jeans">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Celana Jeans</span></a>
+                    </li>
+
+                    <li class="nav-item <?php echo menuAktif('chinos') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>chinos">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Celana Chinos</span></a>
+                    </li>
+
+                    <li class="nav-item <?php echo menuAktif('bahan') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>bahan">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Celana Bahan</span></a>
+                    </li>
+
+                    <li class="nav-item <?php echo menuAktif('jas') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jas">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Jas</span></a>
+                    </li>
+
+                    <li class="nav-item <?php echo menuAktif('tempxkorea') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>tempxkorea">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Temp-x Korea</span></a>
+                    </li>
+
+                    <li class="nav-item <?php echo menuAktif('pakaiananak') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>pakaiananak">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Pakaian Anak</span></a>
+                    </li>
+
+                    <li class="nav-item <?php echo menuAktif('pakaianwanita') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>pakaianwanita">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Pakaian Wanita</span></a>
+                    </li>
+
+                    <li class="nav-item <?php echo menuAktif('sepatu') ?>">
+                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>sepatu">
+                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
+                            <span>Sepatu</span></a>
+                    </li>
+
                     <!-- Divider -->
                 </div>
 

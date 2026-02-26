@@ -53,9 +53,7 @@
 	                </li>
 
 	                <!-- Nav Item - Alerts -->
-	                <?php if ($this->session->userdata('role')==2) {
-
-	                 ?>
+	                <?php if ($this->session->userdata('role')==2) { ?>
 	                <li class="nav-item dropdown no-arrow mx-1">
 	                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
 	                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -94,7 +92,7 @@
 	                        <iconify-icon icon="mdi:invoice-check" width="25" height="25"></iconify-icon>
 	                    </a>
 	                </li>
-	            <?php } ?>
+	            	<?php } ?>
 	            </ul>
 	            <div class="topbar-divider d-none d-sm-block"></div>
 

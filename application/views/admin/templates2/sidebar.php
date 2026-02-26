@@ -30,10 +30,24 @@
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
           <div class="sidebar-content">
             <ul class="nav nav-secondary">
-                <li class="nav-item active">
-                    <a href="<?php echo base_url(); ?>admin123/tema">
+                <li class="nav-item <?php echo menuAktif('produk') ?>">
+                    <a href="<?php echo base_url(); ?>admin/produk">
                     <i class="fas fa-layer-group"></i>
-                    <p>Pilihan Tema</p>
+                    <p>Produk</p>
+                    </a>
+                </li>
+
+                <li class="nav-item <?php echo menuAktif('user') ?>">
+                    <a href="<?php echo base_url(); ?>admin/user">
+                    <i class="fas fa-user"></i>
+                    <p>User</p>
+                    </a>
+                </li>
+
+                <li class="nav-item <?php echo menuAktif('invoice') ?>">
+                    <a href="<?php echo base_url(); ?>admin/invoice">
+                    <i class="fas fa-file-invoice"></i>
+                    <p>Pembelian</p>
                     </a>
                 </li>
             </ul>
