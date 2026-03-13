@@ -1,6 +1,6 @@
 <div class="container kategori margin-bot">
 	<div class="title-kategori">
-		<h3>Kaos</h3>
+		<h3 style="color: white;">Kaos</h3>
 	</div>
     <div class="row">
         <?php foreach ($kaos as $brg) : ?>

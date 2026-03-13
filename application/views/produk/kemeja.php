@@ -1,7 +1,7 @@
 <main>
     <div class="container kategori margin-bot mt-3">
         <div class="title-kategori">
-            <h3>Kemeja</h3>
+            <h3 style="color: white;">Kemeja</h3>
         </div>
         <div class="row">
             <?php foreach ($kemeja as $brg) : ?>

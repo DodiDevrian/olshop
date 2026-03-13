@@ -49,10 +49,10 @@ class Tshirt extends CI_Controller{
 
 		$data['pagination'] = $this->pagination->create_links();
 
-		$this->load->view('templates2/header');
-		$this->load->view('templates2/navbar');
-		$this->load->view('templates2/sidebar');
+		$this->load->view('templates/header');
+		$this->load->view('templates/navbar');
+		$this->load->view('templates/sidebar');
 		$this->load->view('produk/tshirt', $data);
-		$this->load->view('templates2/footer');
+		$this->load->view('templates/footer');
 	}
 }

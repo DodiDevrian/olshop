@@ -1,6 +1,6 @@
 <?php
 
-class Jaket extends CI_Controller{
+class Jaketpria extends CI_Controller{
 	
 	public function __construct(){
 		parent ::__construct();
@@ -10,8 +10,8 @@ class Jaket extends CI_Controller{
 	}
 
 	public function index() {
-		$config['base_url'] 	= site_url('jaket/index');
-		$config['total_rows'] 	= $this->db->where('kategori','Jaket')->from("produk")->count_all_results();
+		$config['base_url'] 	= site_url('jaketpria/index');
+		$config['total_rows'] 	= $this->db->where('kategori','jaketpria')->from("produk")->count_all_results();
 		$config["per_page"]		= 12;
 		$config['uri_segment'] 	= 3;
 		$choice					= $config["total_rows"] / $config['per_page'];
@@ -45,14 +45,14 @@ class Jaket extends CI_Controller{
 		$this->pagination->initialize($config);
 		$data['page']			= ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data['jaket'] = $this->Model_kategori->data_jaket($config["per_page"], $data['page'])->result();
+		$data['jaketpria'] = $this->Model_kategori->data_jaketpria($config["per_page"], $data['page'])->result();
 
 		$data['pagination'] = $this->pagination->create_links();
 
 		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
 		$this->load->view('templates/navbar');
-		$this->load->view('produk/jaket', $data);
+		$this->load->view('templates/sidebar');
+		$this->load->view('produk/jaketpria', $data);
 		$this->load->view('templates/footer');
 	}
 }

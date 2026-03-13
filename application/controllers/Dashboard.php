@@ -54,11 +54,11 @@ class Dashboard extends CI_Controller{
 		$data['barang'] = $this->Model_produk->tampil_data($config["per_page"], $data['page'])->result();
 		
 
-		$this->load->view('templates2/header');
-		$this->load->view('templates2/navbar');
-		$this->load->view('templates2/sidebar');
+		$this->load->view('templates/header');
+		$this->load->view('templates/navbar');
+		$this->load->view('templates/sidebar');
 		$this->load->view('dashboard2', $data);
-		$this->load->view('templates2/footer');
+		$this->load->view('templates/footer');
 	}
 
 	public function keranjang($id){
@@ -69,6 +69,7 @@ class Dashboard extends CI_Controller{
 	        'gambar'  => $barang->gambar,
 	        'qty'     => 1,
 	        'price'   => $barang->harga,
+	        'merek'   => $barang->merek,
 	        'name'    => $barang->nama_produk
 		);
 
@@ -82,8 +83,8 @@ class Dashboard extends CI_Controller{
 		$data['user'] = $this->Model_user->tampil_data()->result();
 		
 		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
 		$this->load->view('templates/navbar');
+		$this->load->view('templates/sidebar');
 		$this->load->view('keranjang', $data);
 		$this->load->view('templates/footer');
 	}
@@ -96,6 +97,7 @@ class Dashboard extends CI_Controller{
 	        'gambar'  => $barang->gambar,
 	        'qty'     => 1,
 	        'price'   => $barang->harga,
+	        'merek'   => $barang->merek,
 	        'name'    => $barang->nama_produk
 		);
 
@@ -111,19 +113,19 @@ class Dashboard extends CI_Controller{
 
 	public function detail($id_produk){
 		$data['barang'] = $this->Model_produk->detail_produk($id_produk);
-		$this->load->view('templates2/header');
-		$this->load->view('templates2/navbar');
-		$this->load->view('templates2/sidebar');
+		$this->load->view('templates/header');
+		$this->load->view('templates/navbar');
+		$this->load->view('templates/sidebar');
 		$this->load->view('detail', $data);
-		$this->load->view('templates2/footer');
+		$this->load->view('templates/footer');
 	}
 
 	public function pembayaran(){
 		$data['user'] = $this->Model_user->tampil_data()->result();
 
 		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
 		$this->load->view('templates/navbar');
+		$this->load->view('templates/sidebar');
 		$this->load->view('pembayaran/pembayaran', $data);
 		$this->load->view('templates/footer');
 	}

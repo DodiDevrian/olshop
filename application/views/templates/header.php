@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/logo.png">
-
-    <title>Media Data Komputer</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="<?php echo base_url()?>assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>assets/css/style.css" rel="stylesheet">
-    <!-- <link href="<?php echo base_url()?>assets/css/login.css" rel="stylesheet"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Overview - SB Admin Pro</title>
+        <link href="<?= base_url('assets/frontend/') ?>css/styles.css" rel="stylesheet" />
+        <link href="<?= base_url('assets/frontend/') ?>css/style-custom.css" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>assets/img/favicon.png" />
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.2.0/css/fontawesome.css">
+        <link
+        defer
+        media="print"
+        onload="this.media='all'"
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v7.2.0/css/solid.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    </head>

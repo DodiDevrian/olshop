@@ -45,6 +45,10 @@ class Model_kategori extends CI_Model{
 		return $this->db->get_where("produk",array('kategori' => 'jaketkulit'),$limit, $start);
 	}
 
+	public function data_sweater($limit, $start){
+		return $this->db->get_where("produk",array('kategori' => 'sweater'),$limit, $start);
+	}
+
 	public function data_hoodie($limit, $start){
 		return $this->db->get_where("produk",array('kategori' => 'hoodie'),$limit, $start);
 	}
@@ -79,6 +83,10 @@ class Model_kategori extends CI_Model{
 
 	public function data_pakaianwanita($limit, $start){
 		return $this->db->get_where("produk",array('kategori' => 'pakaianwanita'),$limit, $start);
+	}
+
+	public function data_pakaianpria($limit, $start){
+		return $this->db->get_where("produk",array('kategori' => 'pakaianpria'),$limit, $start);
 	}
 
 	public function data_sepatu($limit, $start){

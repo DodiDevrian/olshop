@@ -1,10 +1,10 @@
 <main>
     <div class="container kategori margin-bot mt-3">
         <div class="title-kategori">
-            <h3 style="color: white;">T-Shirt</h3>
+            <h3 style="color: white;">Pakaian Pria</h3>
         </div>
         <div class="row">
-            <?php foreach ($tshirt as $brg) : ?>
+            <?php foreach ($pakaianpria as $brg) : ?>
                 <?php if ($brg->stok > 0) { ?>
                     <div class="mt-5 col-lg-3 col-6 d-flex">
                         <div class="card" style="width: 18rem;">

@@ -1,147 +1,110 @@
-<body id="page-top">
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sidenav shadow-right sidenav-light">
+            <div class="sidenav-menu">
+                <div class="nav accordion" id="accordionSidenav">
+                    <div class="sidenav-menu-heading"></div>
+                    <!-- Sidenav Accordion (Dashboard)-->
+                    <a class="nav-link <?php echo menuAktif('dashboard') ?>" href="<?= base_url('dashboard') ?>">
+                        <div class="nav-link-icon"><i class="fa-solid fa-house"></i></div>
+                        Home
+                    </a>
+                    <?php
+                        $seg = $this->uri->segment(1);
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion sidebar-bar" id="accordionSidebar">
+                        $activeBaju = '';
+                        $activeCelana = '';
+                        $activeJaketSweater = '';
+                        $activePakaian = '';
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center brand-fix" href="<?php echo base_url()?>dashboard">
-                <div class="logo">
-                    <img src="<?php echo base_url() ?>assets/img/logo.png" width="50px">
-                </div>
-                <div class="sidebar-brand-text mx-3 title-logo">MEDIA DATA COMPUTER</div>
-                <hr>
-            </a>
+                        $baju = ['kemeja', 'tshirt'];
+                        $celana = ['jeans', 'kargo', 'chinos', 'bahan'];
+                        $jaketSweater = ['jaketpria', 'jaketwanita', 'sweater'];
+                        $pakaian = ['olahraga', 'pakaianwanita', 'pakaianpria'];
 
-            <div class="navbar-fix" style="margin-top: 70px">
+                        if (in_array($seg, $baju)) {
+                            $activeBaju = 'active';
+                        } elseif (in_array($seg, $celana)) {
+                            $activeCelana = 'active';
+                        } elseif (in_array($seg, $jaketSweater)) {
+                            $activeJaketSweater = 'active';
+                        } elseif (in_array($seg, $pakaian)) {
+                            $activePakaian = 'active';
+                        }
+                    ?>
 
-                <!-- Nav Item - Dashboard -->
-                <div class="navbar-content">
-                    <li class="nav-item <?php echo menuAktif('dashboard') ?>">
-
-                        <a class="nav-link" href="<?php echo base_url()?>dashboard">
-                            <i class="fa-solid fa-house"></i>
-                            <span>Home</span></a>
-                    </li>
-
-                    <!-- Heading -->
-                    <div class="sidebar-heading-s">
-                        PRODUK :
+                    <!-- Sidenav Heading (Custom)-->
+                    <div class="sidenav-menu-heading">Produk</div>
+                    <!-- Sidenav Accordion (Pages)-->
+                    <a class="nav-link collapsed <?= $activeBaju ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <div class="nav-link-icon"><i class="fa-solid fa-shirt"></i></div>
+                        Baju
+                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
+                        <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
+                            <!-- Nested Sidenav Accordion (Pages -> Account)-->
+                            <a class="nav-link <?php echo menuAktif('kemeja') ?>" href="<?= base_url('kemeja') ?>">Kemeja</a>
+                            <a class="nav-link <?php echo menuAktif('tshirt') ?>" href="<?= base_url('tshirt') ?>">T-Shirt</a>
+                        </nav>
                     </div>
 
-                    
-                    <!-- Nav Item - Charts -->
-                    <li class="nav-item <?php echo menuAktif('tshirt') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>tshirt">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>T-shirt</span></a>
-                    </li>
-                    
-                    <li class="nav-item <?php echo menuAktif('olahraga') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>olahraga">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Pakaian Olahraga</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('kemeja') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>kemeja">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Kemeja</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('jaketpria') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jaketpria">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Jaket Pria</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('jaketwanita') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jaketwanita">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Jaket Wanita</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('jaketkulit') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jaketkulit">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Jaket Kulit</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('sweater') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>sweater">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Sweater</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('hoodie') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>hoodie">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Hoodie</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('flanel') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>flanel">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Flanel</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('jeans') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jeans">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Celana Jeans</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('chinos') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>chinos">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Celana Chinos</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('bahan') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>bahan">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Celana Bahan</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('jas') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>jas">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Jas</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('tempxkorea') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>tempxkorea">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Temp-x Korea</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('pakaiananak') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>pakaiananak">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Pakaian Anak</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('pakaianwanita') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>pakaianwanita">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Pakaian Wanita</span></a>
-                    </li>
-
-                    <li class="nav-item <?php echo menuAktif('sepatu') ?>">
-                        <a class="nav-link d-flex align-items-center" href="<?php echo base_url()?>sepatu">
-                            <iconify-icon icon="uil:angle-double-right"></iconify-icon>
-                            <span>Sepatu</span></a>
-                    </li>
-
-                    <!-- Divider -->
-                </div>
-
-                <!-- Sidebar Toggler (Sidebar) -->
-                <div class="sidebar-toggler box-toglsdb">
-                    <div class="text-center">
-                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                    <a class="nav-link collapsed <?= $activeCelana ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseCelana" aria-expanded="false" aria-controls="collapsePages">
+                        <div class="nav-link-icon"><i class="fa-classic fa-solid fa-pants"></i></div>
+                        Celana
+                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseCelana" data-bs-parent="#accordionSidenav">
+                        <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
+                            <!-- Nested Sidenav Accordion (Pages -> Account)-->
+                            <a class="nav-link <?php echo menuAktif('jeans') ?>" href="<?= base_url('jeans') ?>">Celana Jeans</a>
+                            <a class="nav-link <?php echo menuAktif('kargo') ?>" href="<?= base_url('kargo') ?>">Celana Kargo</a>
+                            <a class="nav-link <?php echo menuAktif('chinos') ?>" href="<?= base_url('chinos') ?>">Celana Chinos</a>
+                            <a class="nav-link <?php echo menuAktif('bahan') ?>" href="<?= base_url('bahan') ?>">Celana Bahan</a>
+                        </nav>
                     </div>
+
+                    <a class="nav-link collapsed <?= $activeJaketSweater ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseJaketSweater" aria-expanded="false" aria-controls="collapsePages">
+                        <div class="nav-link-icon"><i class="fa-classic fa-solid fa-vest-patches"></i></div>
+                        Jaket / Sweater
+                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseJaketSweater" data-bs-parent="#accordionSidenav">
+                        <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
+                            <!-- Nested Sidenav Accordion (Pages -> Account)-->
+                            <a class="nav-link <?php echo menuAktif('jaketpria') ?>" href="<?= base_url('jaketpria') ?>">Jaket Pria</a>
+                            <a class="nav-link <?php echo menuAktif('jaketwanita') ?>" href="<?= base_url('jaketwanita') ?>">Jaket Wanita</a>
+                            <a class="nav-link <?php echo menuAktif('sweater') ?>" href="<?= base_url('sweater') ?>">Sweater</a>
+                        </nav>
+                    </div>
+
+                    <a class="nav-link collapsed <?= $activePakaian ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePakaian" aria-expanded="false" aria-controls="collapsePages">
+                        <div class="nav-link-icon"><i class="fa-classic fa-solid fa-clothes-hanger"></i></div>
+                        &nbsp;Pakaian
+                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapsePakaian" data-bs-parent="#accordionSidenav">
+                        <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
+                            <!-- Nested Sidenav Accordion (Pages -> Account)-->
+                            <a class="nav-link <?php echo menuAktif('olahraga') ?>" href="<?= base_url('olahraga') ?>">Pakaian Olahraga</a>
+                            <a class="nav-link <?php echo menuAktif('pakaianwanita') ?>" href="<?= base_url('pakaianwanita') ?>">Pakaian Wanita</a>
+                            <a class="nav-link <?php echo menuAktif('pakaianpria') ?>" href="<?= base_url('pakaianpria') ?>">Pakaian Pria</a>
+                        </nav>
+                    </div>
+
+                    <a class="nav-link <?php echo menuAktif('sepatu') ?>" href="<?= base_url('sepatu') ?>">
+                        <div class="nav-link-icon"><i class="fa-solid fa-shoe-prints"></i></div>
+                        Sepatu
+                    </a>
                 </div>
             </div>
-        </ul>
+            <!-- Sidenav Footer-->
+            <div class="sidenav-footer">
+                <div class="sidenav-footer-content">
+                    <div class="sidenav-footer-subtitle">Logged in as:</div>
+                    <div class="sidenav-footer-title"><?php echo $this->session->userdata('nama_user') ?></div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="layoutSidenav_content">

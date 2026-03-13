@@ -62,24 +62,24 @@
                             required
                             >
                                 <option value="" disable selected hidden>Pilih Kategori</option>
-                                <option value="T-shirt">T-shirt</option>
-                                <option value="Pakaian Olahraga">Pakaian Olahraga</option>
-                                <option value="Kemeja">Kemeja</option>
-                                <option value="Jaket Pria">Jaket Pria</option>
-                                <option value="Jaket Wanita">Jaket Wanita</option>
-                                <option value="Jaket Kulit">Jaket Kulit</option>
-                                <option value="Sweater">Sweater</option>
-                                <option value="Hoodie">Hoodie</option>
-                                <option value="Flanel">Flanel</option>
-                                <option value="Celana Jeans">Celana Jeans</option>
-                                <option value="Celana Kargo">Celana Kargo</option>
-                                <option value="Celana Chinos">Celana Chinos</option>
-                                <option value="Celana Bahan">Celana Bahan</option>
-                                <option value="Jas">Jas</option>
-                                <option value="Temp-x Korea">Temp-x Korea</option>
-                                <option value="Pakaian Anak">Pakaian Anak</option>
-                                <option value="Pakaian Wanita">Pakaian Wanita</option>
-                                <option value="Sepatu">Sepatu</option>
+                                <option value="tshirt">T-shirt</option>
+                                <option value="olahraga">Pakaian Olahraga</option>
+                                <option value="kemeja">Kemeja</option>
+                                <option value="jaketpria">Jaket Pria</option>
+                                <option value="jaketwanita">Jaket Wanita</option>
+                                <option value="jaketkulit">Jaket Kulit</option>
+                                <option value="sweater">Sweater</option>
+                                <option value="hoodie">Hoodie</option>
+                                <option value="flanel">Flanel</option>
+                                <option value="jeans">Celana Jeans</option>
+                                <option value="kargo">Celana Kargo</option>
+                                <option value="chinos">Celana Chinos</option>
+                                <option value="bahan">Celana Bahan</option>
+                                <option value="jas">Jas</option>
+                                <option value="tempxkorea">Temp-x Korea</option>
+                                <option value="pakaiananak">Pakaian Anak</option>
+                                <option value="pakaianwanita">Pakaian Wanita</option>
+                                <option value="sepatu">Sepatu</option>
                             </select>
                             <?php echo form_error('kategori', '<div class="text-danger small">', '</div>') ?>
                             <label for="selectFloatingLabel">Kategori</label>

@@ -31,7 +31,7 @@
 					<div class="media">
 						<img src="<?php echo base_url() ?>assets/uploads/<?php echo $items['gambar'] ?>" width="60" class="mr-3">
 						<div class="media-body text-dark">
-							<p><?php echo $items['name'] ?></p>
+							<p><?php echo $items['name'] ?> (<?php echo $items['merek'] ?>)</p>
 						</div>
 					</div>
 				</div>
