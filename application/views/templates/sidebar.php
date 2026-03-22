@@ -13,9 +13,17 @@
                         $seg = $this->uri->segment(1);
 
                         $activeBaju = '';
+                        $colapsedBaju = 'collapsed';
+                        $showBaju = '';
                         $activeCelana = '';
+                        $colapsedCelana = 'collapsed';
+                        $showCelana = '';
                         $activeJaketSweater = '';
+                        $colapsedJaketSweater = 'collapsed';
+                        $showJaketSweater = '';
                         $activePakaian = '';
+                        $colapsedPakaian = 'collapsed';
+                        $showPakaian = '';
 
                         $baju = ['kemeja', 'tshirt'];
                         $celana = ['jeans', 'kargo', 'chinos', 'bahan'];
@@ -24,24 +32,32 @@
 
                         if (in_array($seg, $baju)) {
                             $activeBaju = 'active';
+                            $colapsedBaju = '';
+                            $showBaju = 'show';
                         } elseif (in_array($seg, $celana)) {
                             $activeCelana = 'active';
+                            $colapsedCelana = '';
+                            $showCelana = 'show';
                         } elseif (in_array($seg, $jaketSweater)) {
                             $activeJaketSweater = 'active';
+                            $colapsedJaketSweater = '';
+                            $showJaketSweater = 'show';
                         } elseif (in_array($seg, $pakaian)) {
                             $activePakaian = 'active';
+                            $colapsedPakaian = '';
+                            $showPakaian = 'show';
                         }
                     ?>
 
                     <!-- Sidenav Heading (Custom)-->
                     <div class="sidenav-menu-heading">Produk</div>
                     <!-- Sidenav Accordion (Pages)-->
-                    <a class="nav-link collapsed <?= $activeBaju ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                    <a class="nav-link <?= $colapsedBaju ?> <?= $activeBaju ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div class="nav-link-icon"><i class="fa-solid fa-shirt"></i></div>
                         Baju
                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
+                    <div class="collapse <?= $showBaju ?>" id="collapsePages" data-bs-parent="#accordionSidenav">
                         <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                             <!-- Nested Sidenav Accordion (Pages -> Account)-->
                             <a class="nav-link <?php echo menuAktif('kemeja') ?>" href="<?= base_url('kemeja') ?>">Kemeja</a>
@@ -49,12 +65,12 @@
                         </nav>
                     </div>
 
-                    <a class="nav-link collapsed <?= $activeCelana ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseCelana" aria-expanded="false" aria-controls="collapsePages">
+                    <a class="nav-link <?= $colapsedCelana ?> <?= $activeCelana ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseCelana" aria-expanded="false" aria-controls="collapsePages">
                         <div class="nav-link-icon"><i class="fa-classic fa-solid fa-pants"></i></div>
                         Celana
                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapseCelana" data-bs-parent="#accordionSidenav">
+                    <div class="collapse <?= $showCelana ?>" id="collapseCelana" data-bs-parent="#accordionSidenav">
                         <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                             <!-- Nested Sidenav Accordion (Pages -> Account)-->
                             <a class="nav-link <?php echo menuAktif('jeans') ?>" href="<?= base_url('jeans') ?>">Celana Jeans</a>
@@ -64,12 +80,12 @@
                         </nav>
                     </div>
 
-                    <a class="nav-link collapsed <?= $activeJaketSweater ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseJaketSweater" aria-expanded="false" aria-controls="collapsePages">
+                    <a class="nav-link <?= $colapsedJaketSweater ?> <?= $activeJaketSweater ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseJaketSweater" aria-expanded="false" aria-controls="collapsePages">
                         <div class="nav-link-icon"><i class="fa-classic fa-solid fa-vest-patches"></i></div>
                         Jaket / Sweater
                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapseJaketSweater" data-bs-parent="#accordionSidenav">
+                    <div class="collapse <?= $showJaketSweater ?>" id="collapseJaketSweater" data-bs-parent="#accordionSidenav">
                         <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                             <!-- Nested Sidenav Accordion (Pages -> Account)-->
                             <a class="nav-link <?php echo menuAktif('jaketpria') ?>" href="<?= base_url('jaketpria') ?>">Jaket Pria</a>
@@ -78,12 +94,12 @@
                         </nav>
                     </div>
 
-                    <a class="nav-link collapsed <?= $activePakaian ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePakaian" aria-expanded="false" aria-controls="collapsePages">
+                    <a class="nav-link <?= $colapsedPakaian ?> <?= $activePakaian ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePakaian" aria-expanded="false" aria-controls="collapsePages">
                         <div class="nav-link-icon"><i class="fa-classic fa-solid fa-clothes-hanger"></i></div>
                         &nbsp;Pakaian
                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapsePakaian" data-bs-parent="#accordionSidenav">
+                    <div class="collapse <?= $showPakaian ?>" id="collapsePakaian" data-bs-parent="#accordionSidenav">
                         <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                             <!-- Nested Sidenav Accordion (Pages -> Account)-->
                             <a class="nav-link <?php echo menuAktif('olahraga') ?>" href="<?= base_url('olahraga') ?>">Pakaian Olahraga</a>
