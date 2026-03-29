@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2026 at 12:50 PM
+-- Generation Time: Mar 29, 2026 at 06:31 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -46,7 +46,6 @@ CREATE TABLE `invoice` (
   `id_user` int(20) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `alamat` varchar(225) NOT NULL,
-  `kurir` varchar(20) NOT NULL,
   `nomor` bigint(15) NOT NULL,
   `tgl_pesan` date NOT NULL,
   `gambar` varchar(225) NOT NULL,
@@ -57,13 +56,33 @@ CREATE TABLE `invoice` (
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`id`, `id_user`, `nama`, `alamat`, `kurir`, `nomor`, `tgl_pesan`, `gambar`, `status`) VALUES
-(26, 4, 'Dodi Devrian Andrianto', 'Bandar Jaya', 'SiCepat', 85788113563, '2022-11-18', 'bank-bca12.png', 'Menunggu Validasi'),
-(27, 4, 'Yusuf', 'Bandar Mataram', 'SiCepat', 86726351617, '2022-11-18', 'bank-bca13.png', 'Selesai Validasi'),
-(31, 4, 'Dodi Devrian Andrianto', 'Bandar Jaya', 'JNE', 89627283728, '2022-11-22', 'Tanah_Basah_Hujan.jpeg', 'Selesai Validasi'),
-(34, 13, 'ayu feblira gersy', 'teluk betung bandar lampung', 'GoSend', 85809637670, '2022-11-24', 'WhatsApp_Image_2022-06-27_at_11_35_18.jpeg', 'Selesai Validasi'),
-(37, 4, 'Samsudin', 'Tanggerang', 'JNT', 89627283728, '2022-11-25', 'mugiwara-logo-303FD55C54-seeklogo_com.png', 'Menunggu Validasi'),
-(38, 15, 'Muhammad Asyroful Nur Maulana Yusuf', 'PERUM 1 GPM Blok F.500 RT001 RW008, MATARAMA UDIK,  BANDAR MATARAM, LAMPUNG TENGAH, LAMPUNG', 'JNE', 85267228032, '2022-11-25', 'C2(SERIAL_MONITOR).jpg', 'Selesai Validasi');
+INSERT INTO `invoice` (`id`, `id_user`, `nama`, `alamat`, `nomor`, `tgl_pesan`, `gambar`, `status`) VALUES
+(26, 4, 'Dodi Devrian Andrianto', 'Bandar Jaya', 85788113563, '2022-11-18', 'bank-bca12.png', 'Menunggu Validasi'),
+(27, 4, 'Yusuf', 'Bandar Mataram', 86726351617, '2022-11-18', 'bank-bca13.png', 'Selesai Validasi'),
+(31, 4, 'Dodi Devrian Andrianto', 'Bandar Jaya', 89627283728, '2022-11-22', 'Tanah_Basah_Hujan.jpeg', 'Selesai Validasi'),
+(34, 13, 'ayu feblira gersy', 'teluk betung bandar lampung', 85809637670, '2022-11-24', 'WhatsApp_Image_2022-06-27_at_11_35_18.jpeg', 'Selesai Validasi'),
+(37, 4, 'Samsudin', 'Tanggerang', 89627283728, '2022-11-25', 'mugiwara-logo-303FD55C54-seeklogo_com.png', 'Menunggu Validasi'),
+(38, 15, 'Muhammad Asyroful Nur Maulana Yusuf', 'PERUM 1 GPM Blok F.500 RT001 RW008, MATARAMA UDIK,  BANDAR MATARAM, LAMPUNG TENGAH, LAMPUNG', 85267228032, '2022-11-25', 'C2(SERIAL_MONITOR).jpg', 'Selesai Validasi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `id` int(255) NOT NULL,
+  `nama_payment` varchar(500) NOT NULL,
+  `nama_penerima` varchar(500) NOT NULL,
+  `nomor` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `nama_payment`, `nama_penerima`, `nomor`) VALUES
+(1, 'Bank BCA', 'Dodi', '24');
 
 -- --------------------------------------------------------
 
@@ -207,7 +226,7 @@ INSERT INTO `user` (`id_user`, `username`, `nama_user`, `password`, `role`) VALU
 (5, 'owner', 'Nur Saad', '12345678', '0'),
 (8, 'admin2', 'Dedek Mardedek', '1111111', '1'),
 (10, 'opang', 'opang', '123', '2'),
-(13, 'dodidev', 'Dodi Devrian ANdrianto', 'dodidev', '2'),
+(13, 'dodidev', 'Dodi Devrian Andrianto', 'dodidev', '2'),
 (14, 'opang123', 'opang', '1234567', '2'),
 (15, 'evaaras', 'Muhammad Asyroful Nur Maulana Yusuf', 'yanstirta12', '2');
 
@@ -225,6 +244,12 @@ ALTER TABLE `chat`
 -- Indexes for table `invoice`
 --
 ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -266,6 +291,12 @@ ALTER TABLE `chat`
 --
 ALTER TABLE `invoice`
   MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pesanan`

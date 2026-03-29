@@ -50,6 +50,13 @@
                     <p>Pembelian</p>
                     </a>
                 </li>
+
+                <li class="nav-item <?php echo menuAktif('payment') ?>">
+                    <a href="<?php echo base_url(); ?>admin/payment">
+                    <i class="fas fa-credit-card"></i>
+                    <p>Metode Pembayaran</p>
+                    </a>
+                </li>
             </ul>
           </div>
         </div>

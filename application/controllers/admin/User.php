@@ -20,11 +20,11 @@ class User extends CI_Controller{
 
 		$data['user'] = $this->Model_user->tampil_data()->result();
 
-		$this->load->view('admin/templates/header'); 
-		$this->load->view('admin/templates/sidebar');
-		$this->load->view('admin/templates/navbar');
+		$this->load->view('admin/templates2/header'); 
+		$this->load->view('admin/templates2/sidebar');
+		$this->load->view('admin/templates2/navbar');
 		$this->load->view('admin/menu/user/list-user',$data);
-		$this->load->view('admin/templates/footer');
+		$this->load->view('admin/templates2/footer');
 	}
 
 	public function delete($id){

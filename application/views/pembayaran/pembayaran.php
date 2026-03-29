@@ -29,6 +29,7 @@
 					<div class="form-group">
 						<label>Nomor Handphone</label>
 						<input type="text" name="nomor" placeholder="Wajib Menggunakan Nomor WA Yang Aktif!" class="form-control">
+						<p style="color: red;">**Harus Menggunakan Awalan 62</p>
 						<?php echo form_error('nomor', '<div class="text-danger small">', '</div>') ?>
 					</div>
 					<!-- <div class="form-group">
@@ -59,7 +60,7 @@
 
 				</div>
 
-				<div class="col-lg-4">
+				<div class="col-lg-4 mt-5">
 					<div class="card card-body shadow-sm mb-4">
 						<div class="mb-4">
 							<div class="heading">

@@ -9,10 +9,12 @@
             <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">OLSHOP</a>
             <!-- Navbar Search Input-->
             <!-- * * Note: * * Visible only on and above the lg breakpoint-->
-            <form class="form-inline me-auto d-none d-lg-block me-3">
+            <form class="form-inline me-auto d-none d-lg-block me-3" action="<?php echo base_url('dashboard/search') ?>" method="post">
                 <div class="input-group input-group-joined input-group-solid">
-                    <input class="form-control pe-0" type="search" placeholder="Search" aria-label="Search" />
-                    <div class="input-group-text"><i data-feather="search"></i></div>
+                    <input class="form-control pe-0" type="text" name="keyword" value="<?php echo set_value('keyword'); ?>" placeholder="Search" aria-label="Search" />
+                    <div class="input-group-text">
+                        <button type="submit" style="border: none;"><i data-feather="search"></i></button>
+                    </div>
                 </div>
             </form>
             <!-- Navbar Items-->
@@ -23,10 +25,10 @@
                         <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="searchDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="search"></i></a>
                         <!-- Dropdown - Search-->
                         <div class="dropdown-menu dropdown-menu-end p-3 shadow animated--fade-in-up" aria-labelledby="searchDropdown">
-                            <form class="form-inline me-auto w-100">
+                            <form class="form-inline me-auto w-100" action="<?php echo base_url('dashboard/search') ?>">
                                 <div class="input-group input-group-joined input-group-solid">
                                     <input class="form-control pe-0" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                                    <div class="input-group-text"><i data-feather="search"></i></div>
+                                    <div class="input-group-text" type="submit"><i data-feather="search"></i></div>
                                 </div>
                             </form>
                         </div>

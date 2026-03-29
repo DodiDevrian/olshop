@@ -1,26 +1,61 @@
-<div class="container-fluid" style="margin-bottom: 250px">
-	<div id="content">
-	    <!-- Begin Page Content -->
-	    <div class="container-fluid">
-
-	        <!-- Page Heading -->
-	        <div class="top-bar">	
-	        	<h1 class="h3 mb-2 text-gray-800">USER</h1>
-	        </div>
-	        <!-- DataTales Example -->
-	        <div class="card shadow mb-4">
-	            <div class="card-body">
-	                <div class="table-responsive">
-	                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-	                        <thead>
-	                            <tr>
-	                            	<th>No</th>
-	                                <th>Username</th>
-	                                <th>Nama User</th>
-	                                <th>Role</th>
-	                                <th>&nbsp;</th>
-	                            </tr>
-	                        </thead>
+        <div class="container">
+          <div class="page-inner">
+            <div class="page-header">
+              <h3 class="fw-bold mb-3">Data Metode Pembayaran</h3>
+              <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                  <a href="#">
+                    <i class="icon-home"></i>
+                  </a>
+                </li>
+                <li class="separator">
+                  <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                  <a href="#">Home</a>
+                </li>
+                <li class="separator">
+                  <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                  <a href="#">Data Metode Pembayaran</a>
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="d-flex align-items-center">
+                        <h4 class="card-title">Metode Pembayaran</h4>
+                        <a data-bs-toggle="modal" data-bs-target="#tambahPayment"
+                                class="btn btn-primary btn-round ms-auto"
+                            >
+                                <i class="fa fa-plus"></i>
+                                Tambah Metode
+                        </a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <?php
+                    if ($this->session->flashdata('pesan')) {
+                        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+                        echo $this->session->flashdata('pesan');
+                        echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>';
+                        echo '</div>';
+                    }
+                    ?>
+                    <div class="table-responsive">
+                        <table id="add-row" class="display table table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Username</th>
+									<th>Nama User</th>
+									<th>Role</th>
+									<th>&nbsp;</th>
+								</tr>
+							</thead>
 	                        <tbody>
 	                        	<?php
 	                        	$no=1;
@@ -44,12 +79,10 @@
 
 	                        </tbody>
 	                    </table>
-	                </div>
-	            </div>
-	        </div>
-
-	    </div>
-	    <!-- /.container-fluid -->
-
-	</div>
-</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
