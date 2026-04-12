@@ -61,41 +61,7 @@
 				</div>
 
 				<div class="col-lg-4 mt-5">
-					<div class="card card-body shadow-sm mb-4">
-						<div class="mb-4">
-							<div class="heading">
-								<div class="h5 text-website">
-									TRANSFER DANA
-								</div>
-								<div class="h5 text-primary">
-									<p>Media Data Computer</p>
-								</div>
-							</div>
-
-						</div>
-						<div class="row d-flex justify-content-center mb-4">
-							<div class="col-sm-10 col-lg-3">
-								<img src="<?php echo base_url('assets/img/pembayaran/qr_dana.png') ?>" class="img-fluid">
-							</div>
-							<center class="col align-self-center">
-								<div class="col">
-									<div class="col-sm-12 col-lg-6">
-										<img src="<?php echo base_url('assets/img/pembayaran/dana.png') ?>" class="img-fluid mb-2">
-									</div>
-									<div class="h5 b-text-website">
-										NOMOR DANA
-									</div>
-									<div class="h5 text-primary">
-										<p>0895336467003</p>
-									</div>
-									<div class="h5 b-text-website">
-										NAMA AKUN : NUR SAAD
-									</div>
-								</div>
-							</center>
-						</div>
-					
-					</div>
+					<?php foreach ($payment as $brg) : ?>
 					<div class="card card-body shadow-sm mb-4">
 						<div class="mb-4">
 							<div class="heading">
@@ -103,7 +69,7 @@
 									TRANSFER BANK	
 								</div>
 								<div class="h5 text-primary">
-									<p>Media Data Computer</p>
+									<p>OLSHOP</p>
 								</div>
 							</div>
 
@@ -112,21 +78,24 @@
 							<center class="col align-self-center">
 								<div class="col">
 									<div class="col-sm-12 col-lg-6">
-										<img src="<?php echo base_url('assets/img/pembayaran/bank.png') ?>" class="img-fluid mb-2">
+										<?php if ($brg->nama_payment == 'Bank BCA') { ?>
+											<img src="<?php echo base_url('assets/img/pembayaran/'. $brg->logo) ?>" class="img-fluid mb-2">
+										<?php } ?>
 									</div>
 									<div class="h5 b-text-website">
 										NO REKENING
 									</div>
 									<div class="h5 text-primary">
-										<p>294 0684814</p>
+										<p><?= $brg->nomor ?></p>
 									</div>
 									<div class="h5 b-text-website">
-										NAMA AKUN : NUR SAAD
+										NAMA AKUN : <?= $brg->nama_penerima ?>
 									</div>
 								</div>
 							</center>
 						</div>
 					</div>
+					<?php endforeach; ?>
 				</div>
 			</div>
 		

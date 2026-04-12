@@ -53,7 +53,7 @@
                     <div class="sidenav-menu-heading">Produk</div>
                     <!-- Sidenav Accordion (Pages)-->
                     <a class="nav-link <?= $colapsedBaju ?> <?= $activeBaju ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                        <div class="nav-link-icon"><i class="fa-solid fa-shirt"></i></div>
+                        <div class="nav-link-icon"><iconify-icon icon="mdi:tshirt-crew"></iconify-icon></div>
                         Baju
                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
@@ -66,7 +66,7 @@
                     </div>
 
                     <a class="nav-link <?= $colapsedCelana ?> <?= $activeCelana ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseCelana" aria-expanded="false" aria-controls="collapsePages">
-                        <div class="nav-link-icon"><i class="fa-classic fa-solid fa-pants"></i></div>
+                        <div class="nav-link-icon"><iconify-icon icon="mdi:human-male"></iconify-icon></i></div>
                         Celana
                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
@@ -95,7 +95,7 @@
                     </div>
 
                     <a class="nav-link <?= $colapsedPakaian ?> <?= $activePakaian ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePakaian" aria-expanded="false" aria-controls="collapsePages">
-                        <div class="nav-link-icon"><i class="fa-classic fa-solid fa-clothes-hanger"></i></div>
+                        <div class="nav-link-icon"><iconify-icon icon="mdi:wardrobe"></iconify-icon></i></div>
                         &nbsp;Pakaian
                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>

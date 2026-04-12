@@ -31,7 +31,7 @@ class Auth extends CI_Controller {
 					case 0 : redirect('owner/dashboard_owner');
 							 break;
 
-					case 1 : redirect('admin/dashboard_admin');
+					case 1 : redirect('admin/produk');
 							 break;
 
 					case 2 : redirect('dashboard');

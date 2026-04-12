@@ -5,6 +5,10 @@ class Model_payment extends CI_Model{
         return $this->db->order_by('id', 'DESC')->get('payment');
     }
 
+    public function tampil_data(){
+        return $this->db->get('payment');
+    }
+
     public function tambah_payment($data,$table){
         $this->db->insert($table,$data);
     }

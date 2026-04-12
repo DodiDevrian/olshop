@@ -19,7 +19,6 @@
 										<th>Alamat Pengiriman</th>
 										<th>Tanggal Pemesanan</th>
 										<th>Nomor HP</th>
-										<th>Kurir</th>
 										<th>Bukti Pembayaran</th>
 										<th>Status</th>
 										<th>&nbsp;</th>
@@ -33,7 +32,7 @@
 										if ($inv->id_user == $this->session->userdata('id_user')) { ?>
 									<tr>
 										<td><?php echo $no++ ?></td>
-										<td>MDC-INV-<?php echo $inv->id ?></td>
+										<td>SHOP-INV-<?php echo $inv->id ?></td>
 										<td><?php echo $inv->nama ?></td>
 										<td><?php echo $inv->alamat ?></td>
 										<td>
@@ -87,7 +86,6 @@
 											?>		
 										</td>
 										<td><?php echo $inv->nomor ?></td>
-										<td><?php echo $inv->kurir ?></td>
 										<td><img src="<?php echo base_url() ?>assets/uploads/bukti/<?php echo $inv->gambar ?>" width="50px"></td>
 										<td>
 											<?php if ($inv->status == 'Menunggu Validasi') { ?>

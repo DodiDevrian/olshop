@@ -119,10 +119,10 @@
 									<td class="img-btn">
 										<?php if ($inv->status == 'Menunggu Validasi') { ?>
 											<span class="badge rounded-pill bg-danger"><?php echo $inv->status ?></span>
-											<?php echo anchor('https://wa.me/62'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: MDC-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0AKurir : '.$inv->kurir.'%0A%0ASedang dilakukan validasi pembayaran, silahkan tunggu beberapa saat.',  '<iconify-icon icon="logos:whatsapp-icon"></iconify-icon>') ?> 
+											<?php echo anchor('https://wa.me/62'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: MDC-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0A%0ASedang dilakukan validasi pembayaran, silahkan tunggu beberapa saat.',  '<iconify-icon icon="logos:whatsapp-icon"></iconify-icon>') ?> 
 										<?php }else { ?>
 											<span class="badge rounded-pill bg-success"><?php echo $inv->status ?></span>
-											<?php echo anchor('https://wa.me/62'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: MDC-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0AKurir : '.$inv->kurir.'%0A%0APembayaran sudah tervalidasi.',  '<iconify-icon icon="logos:whatsapp-icon"></iconify-icon>') ?> 
+											<?php echo anchor('https://wa.me/62'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: MDC-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0A%0APembayaran sudah tervalidasi.',  '<iconify-icon icon="logos:whatsapp-icon"></iconify-icon>') ?> 
 										<?php } ?>
 									</td>
 									<td>

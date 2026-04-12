@@ -10,6 +10,7 @@ class Dashboard extends CI_Controller{
 		$this->load->model('Model_kategori');
 		$this->load->model('Model_auth');
 		$this->load->model('Model_user');
+		$this->load->model('Model_payment');
 	}
 
 	public function index() {
@@ -122,6 +123,7 @@ class Dashboard extends CI_Controller{
 
 	public function pembayaran(){
 		$data['user'] = $this->Model_user->tampil_data()->result();
+		$data['payment'] = $this->Model_payment->tampil_data()->result();
 
 		$this->load->view('templates/header');
 		$this->load->view('templates/navbar');

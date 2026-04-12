@@ -45,7 +45,7 @@ class Jaketwanita extends CI_Controller{
 		$this->pagination->initialize($config);
 		$data['page']			= ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data['jaketwanita'] = $this->Model_kategori->data_jaketpria($config["per_page"], $data['page'])->result();
+		$data['jaketwanita'] = $this->Model_kategori->data_jaketwanita($config["per_page"], $data['page'])->result();
 
 		$data['pagination'] = $this->pagination->create_links();
 

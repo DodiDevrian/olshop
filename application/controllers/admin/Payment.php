@@ -30,11 +30,22 @@ class Payment extends CI_Controller{
 
     public function tambah_payment()
 	{
-		$data = array(
-            'nama_payment' => $this->input->post('nama_payment'),
+        $nama_payment = $this->input->post('nama_payment');
+		$logo = null;
+        if ($nama_payment == 'Bank BCA') {
+            $logo = 'bca.png';
+        } elseif ($nama_payment == 'Bank BRI') {
+            $logo = 'bri.png';
+        } elseif ($nama_payment == 'Bank Mandiri') {
+            $logo = 'mandiri.png';
+        }
+
+        $data = array(
+            'nama_payment'   => $nama_payment,
             'nama_penerima' => $this->input->post('nama_penerima'),
-            'nomor' => $this->input->post('nomor'),
-		);
+            'nomor'         => $this->input->post('nomor'),
+            'logo'          => $logo // otomatis keisi
+        );
 
         $this->Model_payment->add($data);
         $this->session->set_flashdata('pesan', 'Data Berhasil Ditambahkan!');

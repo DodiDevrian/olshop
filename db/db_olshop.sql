@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2026 at 06:31 PM
+-- Generation Time: Apr 12, 2026 at 06:24 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -74,15 +74,16 @@ CREATE TABLE `payment` (
   `id` int(255) NOT NULL,
   `nama_payment` varchar(500) NOT NULL,
   `nama_penerima` varchar(500) NOT NULL,
-  `nomor` varchar(500) NOT NULL
+  `nomor` varchar(500) NOT NULL,
+  `logo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `payment`
 --
 
-INSERT INTO `payment` (`id`, `nama_payment`, `nama_penerima`, `nomor`) VALUES
-(1, 'Bank BCA', 'Dodi', '24');
+INSERT INTO `payment` (`id`, `nama_payment`, `nama_penerima`, `nomor`, `logo`) VALUES
+(1, 'Bank BCA', 'Dodi', '24', 'bca.png');
 
 -- --------------------------------------------------------
 

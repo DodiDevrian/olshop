@@ -12,20 +12,20 @@ class Invoice extends CI_Controller{
 	public function index(){
 		$data['invoice'] = $this->Model_invoice->tampil_data();
 
-		$this->load->view('templates2/header');
-		$this->load->view('templates2/navbar');
-		$this->load->view('templates2/sidebar');
+		$this->load->view('templates/header');
+		$this->load->view('templates/navbar');
+		$this->load->view('templates/sidebar');
 		$this->load->view('invoice/list_invoice', $data);
-		$this->load->view('templates2/footer');
+		$this->load->view('templates/footer');
 	}
 
 	public function detail($id_invoice){
 		$data['invoice'] = $this->Model_invoice->ambil_id_invoice($id_invoice);
 		$data['pesanan'] = $this->Model_invoice->ambil_id_pesanan($id_invoice);
 
-		$this->load->view('templates/header');
+		$this->load->view('templates1/header');
 		$this->load->view('invoice/detail_invoice', $data);
-		$this->load->view('templates/footer');
+		// $this->load->view('templates1/footer');
 	}
 
 }
