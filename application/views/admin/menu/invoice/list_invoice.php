@@ -39,105 +39,107 @@
                         echo '</div>';
                     }
                     ?>
-                    <div class="table-responsive">
-                        <table id="add-row" class="display table table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
-							<thead>
-								<tr>
-									<th>No</th>
-									<th>Kode Pembelian</th>
-									<th>Nama Pembeli</th>
-									<th>Alamat Pengiriman</th>
-									<th>Tanggal Pemesanan</th>
-									<th>Nomor HP</th>
-									<th>Bukti Pembayaran</th>
-									<th>Status</th>
-									<th></th>
+						<div class="table-responsive">
+							<table id="add-row" class="display table table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>Kode Pembelian</th>
+										<th>Nama Pembeli</th>
+										<th>Alamat Pengiriman</th>
+										<th>Tanggal Pemesanan</th>
+										<th>Nomor HP</th>
+										<th>Bukti Pembayaran</th>
+										<th>Status</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									$no=1;
+									foreach ($invoice as $inv) : ?>
+									<tr>
+										<td><?php echo $no++ ?></td>
+										<td>MDC-INV-<?php echo $inv->id ?></td>
+										<td><?php echo $inv->nama ?></td>
+										<td><?php echo $inv->alamat ?></td>
+										<td>
+											<?php
+												$tanggal = $inv->tgl_pesan;
 
-								</tr>
-							</thead>
-							<tbody>
-								<?php
-								$no=1;
-								foreach ($invoice as $inv) : ?>
-								<tr>
-									<td><?php echo $no++ ?></td>
-									<td>SHOP-INV-<?php echo $inv->id ?></td>
-									<td><?php echo $inv->nama ?></td>
-									<td><?php echo $inv->alamat ?></td>
-									<td>
-										<?php
-											$tanggal = $inv->tgl_pesan;
+												switch (date('m', strtotime($tanggal))) {
+													case '01':
+														$bulan = 'Januari';
+														break;
+													case '02':
+														$bulan = 'Februari';
+														break;
+													case '03':
+														$bulan = 'Maret';
+														break;
+													case '04':
+														$bulan = 'April';
+														break;
+													case '05':
+														$bulan = 'Mei';
+														break;
+													case '06':
+														$bulan = 'Juni';
+														break;
+													case '07':
+														$bulan = 'Juli';
+														break;
+													case '08':
+														$bulan = 'Agustus';
+														break;
+													case '09':
+														$bulan = 'September';
+														break;
+													case '10':
+														$bulan = 'Oktober';
+														break;
+													case '11':
+														$bulan = 'November';
+														break;
+													case '12':
+														$bulan = 'Desember';
+														break;
+													
+													default:
+														$bulan = 'Tidak diketahui';
+														break;
+												}
 
-											switch (date('m', strtotime($tanggal))) {
-												case '01':
-													$bulan = 'Januari';
-													break;
-												case '02':
-													$bulan = 'Februari';
-													break;
-												case '03':
-													$bulan = 'Maret';
-													break;
-												case '04':
-													$bulan = 'April';
-													break;
-												case '05':
-													$bulan = 'Mei';
-													break;
-												case '06':
-													$bulan = 'Juni';
-													break;
-												case '07':
-													$bulan = 'Juli';
-													break;
-												case '08':
-													$bulan = 'Agustus';
-													break;
-												case '09':
-													$bulan = 'September';
-													break;
-												case '10':
-													$bulan = 'Oktober';
-													break;
-												case '11':
-													$bulan = 'November';
-													break;
-												case '12':
-													$bulan = 'Desember';
-													break;
-												
-												default:
-													$bulan = 'Tidak diketahui';
-													break;
-											}
+												echo date('d', strtotime($tanggal)). ' '. $bulan. ' '. date('Y', strtotime($tanggal));
+											?>
+										</td>
+										<td><?php echo $inv->nomor ?></td>
+										<td><img src="<?php echo base_url() ?>assets/uploads/bukti/<?php echo $inv->gambar ?>" width="50px"></td>
+										<td class="img-btn">
+											<?php if ($inv->status == 'Menunggu Validasi') { ?>
+												<span class="badge rounded-pill bg-danger"><?php echo $inv->status ?></span>
+												<a href="<?= 'https://wa.me/62'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: MDC-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0A%0ASedang dilakukan validasi pembayaran, silahkan tunggu beberapa saat.' ?> " target="_blank">
+													<div class="btn btn-sm btn-primary"><i class="fa-brands fa-whatsapp"></i> WA</div>
+												</a>
+											<?php }else { ?>
+												<span class="badge rounded-pill bg-success"><?php echo $inv->status ?></span>
+												<?php echo anchor('https://wa.me/62'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: MDC-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0A%0APembayaran sudah tervalidasi.',  '<iconify-icon icon="logos:whatsapp-icon"></iconify-icon>') ?> 
+											<?php } ?>
+										</td>
+										<td>
+											<?php if ($inv->status == 'Selesai Validasi') { ?>
+												<a href="<?php echo base_url('owner/invoice/detail/'.$inv->id) ?>" target="_blank">
+													<div class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-info"></i></iconify-icon></div>
+												</a>
+											<?php } ?>
+										</td>
 
-											echo date('d', strtotime($tanggal)). ' '. $bulan. ' '. date('Y', strtotime($tanggal));
-										?>
-									</td>
-									<td><?php echo $inv->nomor ?></td>
-									<td><img src="<?php echo base_url() ?>assets/uploads/bukti/<?php echo $inv->gambar ?>" width="50px"></td>
-									<td class="img-btn">
-										<?php if ($inv->status == 'Menunggu Validasi') { ?>
-											<span class="badge rounded-pill bg-danger"><?php echo $inv->status ?></span>
-											<?php echo anchor('https://wa.me/62'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: MDC-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0A%0ASedang dilakukan validasi pembayaran, silahkan tunggu beberapa saat.',  '<iconify-icon icon="logos:whatsapp-icon"></iconify-icon>') ?> 
-										<?php }else { ?>
-											<span class="badge rounded-pill bg-success"><?php echo $inv->status ?></span>
-											<?php echo anchor('https://wa.me/62'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: MDC-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0A%0APembayaran sudah tervalidasi.',  '<iconify-icon icon="logos:whatsapp-icon"></iconify-icon>') ?> 
-										<?php } ?>
-									</td>
-									<td>
-										<div class="d-flex gap-2">
-											<a href="<?= base_url('admin/invoice/detail/'.$inv->id) ?>"><div class="btn btn-sm btn-primary"><i class="fas fa-info-circle"></i></iconify-icon></div></a>
-											<a href="<?= base_url('admin/invoice/edit/'.$inv->id) ?>"><div class="btn btn-sm btn-secondary"><i class="far fa-edit"></i></iconify-icon></div></a>
-										</div>
-									</td>
+									</tr>
+									<?php endforeach; ?>
 
-								</tr>
-								<?php endforeach; ?>
-
-							</tbody>
-						</table>
-                    </div>
+								</tbody>
+							</table>
+						</div>	
                   </div>
                 </div>
               </div>
