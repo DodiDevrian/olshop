@@ -28,8 +28,8 @@
 					</div>
 					<div class="form-group">
 						<label>Nomor Handphone</label>
-						<input type="text" name="nomor" placeholder="Wajib Menggunakan Nomor WA Yang Aktif!" class="form-control">
-						<p style="color: red;">**Harus Menggunakan Awalan 62</p>
+						<input type="text" name="nomor" placeholder="Wajib Menggunakan Nomor WA Yang Aktif!" class="form-control" value="62">
+						<p style="color: red;">**Harus Menggunakan Nomor WA Yang Aktif Dengan Awalan 62 (Lanjutkan Input Di Atas)</p>
 						<?php echo form_error('nomor', '<div class="text-danger small">', '</div>') ?>
 					</div>
 					<!-- <div class="form-group">
@@ -66,7 +66,7 @@
 						<div class="mb-4">
 							<div class="heading">
 								<div class="h5 text-website">
-									TRANSFER BANK	
+									TRANSFER
 								</div>
 								<div class="h5 text-primary">
 									<p>OLSHOP</p>
@@ -79,6 +79,18 @@
 								<div class="col">
 									<div class="col-sm-12 col-lg-6">
 										<?php if ($brg->nama_payment == 'Bank BCA') { ?>
+											<img src="<?php echo base_url('assets/img/pembayaran/'. $brg->logo) ?>" class="img-fluid mb-2">
+										<?php } elseif ($brg->nama_payment == 'Bank BRI') { ?>
+											<img src="<?php echo base_url('assets/img/pembayaran/'. $brg->logo) ?>" class="img-fluid mb-2">
+										<?php } elseif ($brg->nama_payment == 'Bank Mandiri') { ?>
+											<img src="<?php echo base_url('assets/img/pembayaran/'. $brg->logo) ?>" class="img-fluid mb-2">
+										<?php } elseif ($brg->nama_payment == 'Bank BNI') { ?>
+											<img src="<?php echo base_url('assets/img/pembayaran/'. $brg->logo) ?>" class="img-fluid mb-2">
+										<?php } elseif ($brg->nama_payment == 'Gopay') { ?>
+											<img src="<?php echo base_url('assets/img/pembayaran/'. $brg->logo) ?>" class="img-fluid mb-2">
+										<?php } elseif ($brg->nama_payment == 'OVO') { ?>
+											<img src="<?php echo base_url('assets/img/pembayaran/'. $brg->logo) ?>" class="img-fluid mb-2">
+										<?php } elseif ($brg->nama_payment == 'DANA') { ?>
 											<img src="<?php echo base_url('assets/img/pembayaran/'. $brg->logo) ?>" class="img-fluid mb-2">
 										<?php } ?>
 									</div>

@@ -111,10 +111,10 @@
     <!--Content before waves-->
     <div class="inner-header flex">
     <!--Just the logo.. Don't mind this-->
-    <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+    <!-- <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve">
     <path fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M57,283" />
-    </svg>
+    </svg> -->
     <div class="container">
 
         <!-- Outer Row -->
@@ -133,7 +133,14 @@
                                         <h1 class="h4 text-gray-900 mb-4">Login</h1>
                                     </div>
 
-                                    <?php echo $this->session->flashdata('pesan') ?>
+                                    <?php
+                                      if ($this->session->flashdata('pesan')) {
+                                          echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+                                          echo $this->session->flashdata('pesan');
+                                          echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>';
+                                          echo '</div>';
+                                      }
+                                    ?>
 
                                     <form method="post" action="<?php echo base_url('auth/login') ?>" class="user">
                                         <div class="form-group mb-2">

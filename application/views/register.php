@@ -111,9 +111,10 @@
     <!--Content before waves-->
     <div class="inner-header flex">
     <!--Just the logo.. Don't mind this-->
-    <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+    <!-- <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve">
     <path fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M57,283" />
+    </svg> -->
 
     <div class="container mt-2">
         <div class="card o-hidden border-0 shadow-lg col-lg-6 my-5 mx-auto ">
@@ -127,17 +128,17 @@
                                 <h1 class="h4 text-gray-900 mb-4">Daftar Akun!</h1>
                             </div>
                             <form class="user" method="post" action="<?php echo base_url('register') ?>">
-                                <div class="form-group">
+                                <div class="form-group mb-2">
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Nama Lengkap" name="nama_user">
                                     <?php echo form_error('nama_user', '<div class="text-danger small ml-2">', '</div>') ?>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group mb-2">
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Username" name="username">
                                     <?php echo form_error('username', '<div class="text-danger small ml-2">', '</div>') ?>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row mb-2">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Password" name="password_1">
@@ -165,18 +166,18 @@
 
     <!--Waves Container-->
     <div>
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-    <defs>
-    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-    </defs>
-    <g class="parallax">
-    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-    </g>
-    </svg>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
     </div>
     <!--Waves end-->
 

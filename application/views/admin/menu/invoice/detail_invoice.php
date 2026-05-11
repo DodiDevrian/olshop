@@ -19,11 +19,11 @@
 			<table>
 				<tr>
 					<td><b>Admin</b></td>
-					<td>&emsp;: Juli Adi Umar</td>
+					<td>&emsp;: Joy</td>
 				</tr>
 				<tr>
 					<td><b>Nomor</b></td>
-					<td>&emsp;: <?php echo 'MDC-INV-'.$invoice->id ?></td>
+					<td>&emsp;: SHOP-INV-<?php echo $invoice->id ?></td>
 				</tr>
 				<tr>
 					<td><b>Tanggal</b></td>
@@ -91,8 +91,6 @@
 					<td>&emsp;: <?php echo $invoice->alamat ?></td>
 				</tr>
 				<tr>
-					<td><b>Kurir</b></td>
-					<td>&emsp;: <?php echo $invoice->kurir ?></td>
 				</tr>
 			</table>
 		</div>
@@ -204,7 +202,7 @@
 			</table>
 		</div>
 	</div>
-	<div class="no-print">
+	<div class="no-print" style="margin: auto;">
 		<button type="button" class="btn btn-primary" onclick="printPage()">Cetak Invoice</button>
     </div>
 </div>

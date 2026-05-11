@@ -102,7 +102,7 @@
         </div>
 
 <!-- Modal Edit Gambar -->
-<?php foreach($barang as $brg) : ?> ?>
+<?php foreach($barang as $brg) : ?>
 <div class="modal fade" id="ubahGambar<?php echo $brg->id_produk ?>" tabindex="-1" aria-labelledby="ubahGambar<?php echo $brg->id_produk ?>Label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -130,7 +130,7 @@
 </div>
 <?php endforeach; ?>
 
-<?php foreach($barang as $brg) : ?> ?>
+<?php foreach($barang as $brg) : ?>
 <div class="modal fade" id="ubahData<?php echo $brg->id_produk ?>" tabindex="-1" aria-labelledby="ubahData<?php echo $brg->id_produk ?>Label" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">

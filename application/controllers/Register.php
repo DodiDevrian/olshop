@@ -26,6 +26,7 @@ class Register extends CI_Controller{
 			);
 
 			$this->db->insert('user', $data);
+			$this->session->set_flashdata('pesan', 'Akun Berhasil Dibuat!');
 			redirect('auth/login');
 		}
 

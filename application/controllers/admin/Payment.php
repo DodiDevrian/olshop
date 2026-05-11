@@ -38,7 +38,15 @@ class Payment extends CI_Controller{
             $logo = 'bri.png';
         } elseif ($nama_payment == 'Bank Mandiri') {
             $logo = 'mandiri.png';
-        }
+        } elseif ($nama_payment == 'Bank BNI') {
+			$logo = 'bni.png';
+		} elseif ($nama_payment == 'Gopay') {
+			$logo = 'gopay.png';
+		} elseif ($nama_payment == 'OVO') {
+			$logo = 'ovo.png';
+		} elseif ($nama_payment == 'DANA') {
+			$logo = 'dana.png';
+		}
 
         $data = array(
             'nama_payment'   => $nama_payment,

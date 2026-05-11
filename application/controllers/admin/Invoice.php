@@ -31,10 +31,7 @@ class Invoice extends CI_Controller{
 		$data['pesanan'] = $this->Model_invoice->ambil_id_pesanan($id_invoice);
 
 		$this->load->view('admin/templates/header');
-		$this->load->view('admin/templates/sidebar');
-		$this->load->view('admin/templates/navbar');
 		$this->load->view('admin/menu/invoice/detail_invoice', $data);
-		$this->load->view('admin/templates/footer');
 	}
 
 	public function edit($id){

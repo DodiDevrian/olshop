@@ -6,12 +6,7 @@
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
             <a href="<?php echo base_url(); ?>assets/backend/index.html" class="logo">
-              <img
-                src="<?php echo base_url(); ?>assets/backend/assets/img/kaiadmin/logo_light.svg"
-                alt="navbar brand"
-                class="navbar-brand"
-                height="20"
-              />
+              <h4 class="text-light">ADMIN OLSHOP</h4>
             </a>
             <div class="nav-toggle">
               <button class="btn btn-toggle toggle-sidebar">
