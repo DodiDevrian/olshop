@@ -7,17 +7,19 @@ class Model_invoice extends CI_Model{
 		$id_user 	= $this->input->post('id_user');
 		$nama 		= $this->input->post('nama');
 		$alamat 	= $this->input->post('alamat');
-		$kurir 		= $this->input->post('kurir');
 		$nomor 		= $this->input->post('nomor');
 		$status 	= $this->input->post('status');
 		$gambar		= $_FILES['gambar']['name'];
-		if ($gambar =''){}else{
-			$config ['upload_path']= './assets/uploads/bukti';
+		if ($gambar ==''){}else{
+			$config['upload_path'] = FCPATH . 'assets/uploads/bukti/';
 			$config ['allowed_types']= 'jpg|jpeg|png|gif';
+			$config['encrypt_name']  = TRUE;
 
-			$this->load->library('upload', $config);
+			// $this->load->library('upload', $config);
+			$this->load->library('upload');
+		$this->upload->initialize($config);
 			if (!$this->upload->do_upload('gambar')) {
-				echo "Gambar Gagal Diupload";
+				echo $this->upload->display_errors();
 			}else{
 				$gambar=$this->upload->data('file_name');
 			}
@@ -27,7 +29,6 @@ class Model_invoice extends CI_Model{
 			'id_user'	=> $id_user,
 			'nama'		=> $nama,
 			'alamat'	=> $alamat,
-			'kurir'		=> $kurir,
 			'nomor'		=> $nomor,
 			'status'	=> 'Menunggu Validasi',
 			'tgl_pesan'	=> date('Y-m-d'),

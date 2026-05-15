@@ -136,7 +136,6 @@ class Dashboard extends CI_Controller{
 
 		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required',['required' => 'Nama Lengkap wajib diisi!']);
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required',['required' => 'Alamat wajib diisi!']);
-		$this->form_validation->set_rules('kurir', 'Kurir', 'required',['required' => 'Kurir wajib diisi!']);
 		$this->form_validation->set_rules('nomor', 'Nomor WhatsApp', 'required',['required' => 'Nomor WhatsApp wajib diisi!']);
 		if (empty($_FILES['gambar']['name'])){
 		    $this->form_validation->set_rules('gambar', 'Bukti', 'required',[
@@ -155,7 +154,6 @@ class Dashboard extends CI_Controller{
 			$is_processed = $this->Model_invoice->index();
 			if ($is_processed) {
 				$this->cart->destroy();
-
 				$this->load->view('templates/header');
 				$this->load->view('templates/sidebar');
 				$this->load->view('templates/navbar');

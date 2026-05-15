@@ -46,10 +46,11 @@
 					</div> -->
 					<div class="form-group">
 						<label>Metode Pembayaran</label>
-						<select class="form-control">
+						<select class="form-control" name="payment_method">
 							<option disable selected hidden>Pilih Metode Pembayaran</option>
-							<option>DANA - 085267228032</option>
-							<option>BANK BSI - 71198526357</option>
+							<?php foreach ($payment as $brg) : ?>
+								<option value="<?= $brg->nama_payment ?>"><?= $brg->nama_payment ?></option>
+							<?php endforeach; ?>
 						</select>
 					</div>
 					<div class="form-group">

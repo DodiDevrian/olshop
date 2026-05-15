@@ -9,18 +9,14 @@
 	<div class="invoice-top">
 		<h4>INVOICE PEMBELIAN</h4>
 		<div class="mdc-logo">
-			<img src="<?php echo base_url() ?>assets/img/logo.png" width="100" >
-			<h4 class="mdc-invoice ml-3">Media Data Computer</h4>
+			<!-- <img src="<?php echo base_url() ?>assets/img/logo.png" width="100" > -->
+			<h4 class="mdc-invoice ml-3">MONDAN SHOP</h4>
 		</div>
 	</div>
 	<p style="margin-top: 50px; margin-bottom: 5px;">Diterbitkan atas nama :</p>
 	<div class="info-inv" style="margin-bottom: 20px;">
 		<div class="info-invoice">
 			<table>
-				<tr>
-					<td><b>Admin</b></td>
-					<td>&emsp;: Joy</td>
-				</tr>
 				<tr>
 					<td><b>Nomor</b></td>
 					<td>&emsp;: SHOP-INV-<?php echo $invoice->id ?></td>
@@ -181,7 +177,7 @@
 			<div class="ttd-aad">
 				<img src="<?php echo base_url() ?>assets/img/ttd/ttd.png" width="150">
 			</div>
-			<p align="center"><b>Nur Saad</b></p>
+			<p align="center"><b>Sanjay Tarigan</b></p>
 		</div>
 		<div class="total">
 			<table>
