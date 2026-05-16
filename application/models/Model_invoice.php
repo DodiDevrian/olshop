@@ -55,6 +55,7 @@ class Model_invoice extends CI_Model{
 	}
 
 	public function tampil_data(){
+		$this->db->order_by('id', 'DESC');
 		$result = $this->db->get('invoice');
 		if ($result->num_rows() > 0) {
 			return $result->result();

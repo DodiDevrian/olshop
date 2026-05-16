@@ -18,7 +18,7 @@
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Data Metode Pembayaran</a>
+                  <a href="#">Data User</a>
                 </li>
               </ul>
             </div>
@@ -27,13 +27,7 @@
                 <div class="card">
                   <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">Metode Pembayaran</h4>
-                        <a data-bs-toggle="modal" data-bs-target="#tambahPayment"
-                                class="btn btn-primary btn-round ms-auto"
-                            >
-                                <i class="fa fa-plus"></i>
-                                Tambah Metode
-                        </a>
+                        <h4 class="card-title">User</h4>
                     </div>
                   </div>
                   <div class="card-body">
