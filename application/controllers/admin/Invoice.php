@@ -30,7 +30,7 @@ class Invoice extends CI_Controller{
 		$data['invoice'] = $this->Model_invoice->ambil_id_invoice($id_invoice);
 		$data['pesanan'] = $this->Model_invoice->ambil_id_pesanan($id_invoice);
 
-		$this->load->view('admin/templates/header');
+		$this->load->view('admin/templates2/header');
 		$this->load->view('admin/menu/invoice/detail_invoice', $data);
 	}
 
