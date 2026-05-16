@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Overview - SB Admin Pro</title>
+        <title>Mondan Shop</title>
         <link href="<?= base_url('assets/frontend/') ?>css/styles.css" rel="stylesheet" />
         <link href="<?= base_url('assets/frontend/') ?>css/style-custom.css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>assets/img/favicon.png" />
