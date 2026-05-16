@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2026 at 06:24 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.3.33
+-- Generation Time: May 15, 2026 at 03:32 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,20 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chat`
---
-
-CREATE TABLE `chat` (
-  `id_chat` int(4) NOT NULL,
-  `id_user` int(4) NOT NULL,
-  `tgl_chat` date NOT NULL,
-  `waktu_chat` time(5) NOT NULL,
-  `isi_chat` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `invoice`
 --
 
@@ -50,19 +36,19 @@ CREATE TABLE `invoice` (
   `tgl_pesan` date NOT NULL,
   `gambar` varchar(225) NOT NULL,
   `status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `invoice`
 --
 
 INSERT INTO `invoice` (`id`, `id_user`, `nama`, `alamat`, `nomor`, `tgl_pesan`, `gambar`, `status`) VALUES
-(26, 4, 'Dodi Devrian Andrianto', 'Bandar Jaya', 85788113563, '2022-11-18', 'bank-bca12.png', 'Menunggu Validasi'),
-(27, 4, 'Yusuf', 'Bandar Mataram', 86726351617, '2022-11-18', 'bank-bca13.png', 'Selesai Validasi'),
-(31, 4, 'Dodi Devrian Andrianto', 'Bandar Jaya', 89627283728, '2022-11-22', 'Tanah_Basah_Hujan.jpeg', 'Selesai Validasi'),
-(34, 13, 'ayu feblira gersy', 'teluk betung bandar lampung', 85809637670, '2022-11-24', 'WhatsApp_Image_2022-06-27_at_11_35_18.jpeg', 'Selesai Validasi'),
-(37, 4, 'Samsudin', 'Tanggerang', 89627283728, '2022-11-25', 'mugiwara-logo-303FD55C54-seeklogo_com.png', 'Menunggu Validasi'),
-(38, 15, 'Muhammad Asyroful Nur Maulana Yusuf', 'PERUM 1 GPM Blok F.500 RT001 RW008, MATARAMA UDIK,  BANDAR MATARAM, LAMPUNG TENGAH, LAMPUNG', 85267228032, '2022-11-25', 'C2(SERIAL_MONITOR).jpg', 'Selesai Validasi');
+(26, 4, 'Dodi Devrian Andrianto', 'Bandar Jaya', 6285788113563, '2022-11-18', 'bank-bca12.png', 'Menunggu Validasi'),
+(27, 4, 'Yusuf', 'Bandar Mataram', 6285788113563, '2022-11-18', 'bank-bca13.png', 'Selesai Validasi'),
+(31, 4, 'Dodi Devrian Andrianto', 'Bandar Jaya', 6285788113563, '2022-11-22', 'Tanah_Basah_Hujan.jpeg', 'Selesai Validasi'),
+(34, 13, 'ayu feblira gersy', 'teluk betung bandar lampung', 6285788113563, '2022-11-24', 'WhatsApp_Image_2022-06-27_at_11_35_18.jpeg', 'Selesai Validasi'),
+(37, 4, 'Samsudin', 'Tanggerang', 6285788113563, '2022-11-25', 'mugiwara-logo-303FD55C54-seeklogo_com.png', 'Menunggu Validasi'),
+(38, 15, 'Muhammad Asyroful Nur Maulana Yusuf', 'PERUM 1 GPM Blok F.500 RT001 RW008, MATARAMA UDIK,  BANDAR MATARAM, LAMPUNG TENGAH, LAMPUNG', 6285788113563, '2022-11-25', 'C2(SERIAL_MONITOR).jpg', 'Selesai Validasi');
 
 -- --------------------------------------------------------
 
@@ -76,14 +62,15 @@ CREATE TABLE `payment` (
   `nama_penerima` varchar(500) NOT NULL,
   `nomor` varchar(500) NOT NULL,
   `logo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `payment`
 --
 
 INSERT INTO `payment` (`id`, `nama_payment`, `nama_penerima`, `nomor`, `logo`) VALUES
-(1, 'Bank BCA', 'Dodi', '24', 'bca.png');
+(1, 'Bank BCA', 'Dodi', '24637261235', 'bca.png'),
+(2, 'Bank BRI', 'Dodi', '156256371', 'bri.png');
 
 -- --------------------------------------------------------
 
@@ -99,7 +86,7 @@ CREATE TABLE `pesanan` (
   `tgl_pesan` date NOT NULL,
   `jumlah` int(25) NOT NULL,
   `harga` int(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `pesanan`
@@ -127,7 +114,14 @@ INSERT INTO `pesanan` (`id`, `id_invoice`, `id_produk`, `nama_produk`, `tgl_pesa
 (46, 36, 24, 'Acer Predator Helios T800', '2022-11-25', 1, 20000000),
 (47, 37, 25, 'asxa', '2022-11-25', 1, 30000000),
 (48, 38, 20, 'Headset Gaming Rexus Thundervox RGB', '2022-11-25', 1, 200000),
-(49, 38, 30, 'Flashdisk acer 16gb', '2022-11-25', 1, 120000);
+(49, 38, 30, 'Flashdisk acer 16gb', '2022-11-25', 1, 120000),
+(50, 39, 72, 'Kemeja Polos Putih', '2026-05-13', 1, 132000),
+(51, 40, 76, 'Hoodie Man City', '2026-05-13', 1, 135000),
+(52, 41, 76, 'Hoodie Man City', '2026-05-13', 1, 135000),
+(53, 42, 77, 'Jaket Kulit Varcity', '2026-05-13', 1, 250000),
+(54, 43, 76, 'Hoodie Man City', '2026-05-13', 1, 135000),
+(55, 44, 77, 'Jaket Kulit Varcity', '2026-05-13', 1, 250000),
+(56, 45, 77, 'Jaket Kulit Varcity', '2026-05-13', 1, 250000);
 
 --
 -- Triggers `pesanan`
@@ -155,7 +149,7 @@ CREATE TABLE `produk` (
   `detail_produk` longtext NOT NULL,
   `kategori` varchar(100) NOT NULL,
   `gambar` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `produk`
@@ -173,40 +167,6 @@ INSERT INTO `produk` (`id_produk`, `nama_produk`, `merek`, `harga`, `stok`, `det
 -- --------------------------------------------------------
 
 --
--- Table structure for table `service`
---
-
-CREATE TABLE `service` (
-  `id_service` int(4) NOT NULL,
-  `id_user` int(20) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `alamat` varchar(100) NOT NULL,
-  `no_wa` bigint(15) NOT NULL,
-  `tanggal` date NOT NULL,
-  `barang` varchar(10) NOT NULL,
-  `keluhan` text NOT NULL,
-  `status` varchar(20) NOT NULL,
-  `biaya` int(15) NOT NULL,
-  `gambar` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `service`
---
-
-INSERT INTO `service` (`id_service`, `id_user`, `nama`, `alamat`, `no_wa`, `tanggal`, `barang`, `keluhan`, `status`, `biaya`, `gambar`) VALUES
-(13, 4, 'Yusuf', 'Bandar', 85267228032, '2022-11-16', 'Laptop Ker', 'Laptop Kayak Taik', 'Selesai Diproses', 50000, 'Tanah_Kering_Hujan.jpeg'),
-(14, 4, 'Heruk', 'Riau', 82284569653, '2022-11-17', 'Printer', 'Printernya Kocak', 'Sedang Diproses', 50000, 'Tanah_Basah_Hujan.jpeg'),
-(17, 13, 'ayu feblira gersy', 'teluk betung', 81617744902, '2022-11-24', 'Laptop', 'tidak bisa tampil', 'Belum Diproses', 0, 'gagal.png'),
-(18, 12, 'Dina Cindi Pangestu', 'Bandar Jaya', 88878675849, '2022-11-24', 'Laptop', 'LCD rusak', 'Belum Diproses', 0, 'Asus_a416ma.jpg'),
-(21, 0, 'Samsudin', 'Pringsewu ', 823788897456, '2022-11-24', 'Printer', 'Tinta tidak keluar', 'Sedang Diproses', 100000, 'printer.jpg'),
-(22, 4, 'Ahmad Jajuri', 'Lampung', 8972162512, '2022-11-24', 'Laptop', 'Keyboard eror', 'Belum Diproses', 0, 'screenshot-20221105-021023-chrome-6365567e8db7a867251a59642.jpg'),
-(23, 13, 'ayu feblira gersy', 'teluk betung', 81617744902, '2022-11-24', 'Aksesoris', 'gktau kenapa', 'Belum Diproses', 0, 'Screenshot_(14).png'),
-(24, 15, 'Muhammad Asyroful Nur Maulana Yusuf', 'Jln Pegangsaan Timur No.456 Lampung Selatan', 85267228032, '2022-11-25', 'Laptop', 'Laptop nya gk bisa hidup total selalu black screen.', 'Selesai Diproses', 5000000, 'C2(SERIAL_MONITOR).jpg');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -216,7 +176,7 @@ CREATE TABLE `user` (
   `nama_user` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
   `role` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -229,17 +189,12 @@ INSERT INTO `user` (`id_user`, `username`, `nama_user`, `password`, `role`) VALU
 (10, 'opang', 'opang', '123', '2'),
 (13, 'dodidev', 'Dodi Devrian Andrianto', 'dodidev', '2'),
 (14, 'opang123', 'opang', '1234567', '2'),
-(15, 'evaaras', 'Muhammad Asyroful Nur Maulana Yusuf', 'yanstirta12', '2');
+(15, 'evaaras', 'Muhammad Asyroful Nur Maulana Yusuf', 'yanstirta12', '2'),
+(18, 'Devan', 'Devan', 'Devan', '2');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `chat`
---
-ALTER TABLE `chat`
-  ADD PRIMARY KEY (`id_chat`);
 
 --
 -- Indexes for table `invoice`
@@ -266,12 +221,6 @@ ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- Indexes for table `service`
---
-ALTER TABLE `service`
-  ADD PRIMARY KEY (`id_service`);
-
---
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -282,28 +231,22 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `chat`
---
-ALTER TABLE `chat`
-  MODIFY `id_chat` int(4) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `produk`
@@ -312,16 +255,10 @@ ALTER TABLE `produk`
   MODIFY `id_produk` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
--- AUTO_INCREMENT for table `service`
---
-ALTER TABLE `service`
-  MODIFY `id_service` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
---
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
