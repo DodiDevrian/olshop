@@ -1,7 +1,7 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header">
-              <h3 class="fw-bold mb-3">Data Metode Pembayaran</h3>
+              <h3 class="fw-bold mb-3">Data Management Rekening</h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="#">
@@ -18,7 +18,7 @@
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Data Metode Pembayaran</a>
+                  <a href="#">Management Rekening</a>
                 </li>
               </ul>
             </div>
@@ -27,12 +27,12 @@
                 <div class="card">
                   <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">Metode Pembayaran</h4>
+                        <h4 class="card-title">Management Rekening</h4>
                         <a data-bs-toggle="modal" data-bs-target="#tambahPayment"
                                 class="btn btn-primary btn-round ms-auto"
                             >
                                 <i class="fa fa-plus"></i>
-                                Tambah Metode
+                                Tambah Rekening
                         </a>
                     </div>
                   </div>

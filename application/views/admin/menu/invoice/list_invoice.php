@@ -135,13 +135,13 @@
 												</span>
 												<?php if ($inv->status == 'Menunggu Validasi') { ?>
 													<span>
-														<a href="<?= 'https://wa.me/'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: SHOP-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0A%0ASedang dilakukan validasi pembayaran, silahkan tunggu beberapa saat.' ?> " target="_blank">
+														<a href="<?= 'https://wa.me/'.$inv->nomor. '?text=Pembelian Produk Toko Mondan Shop Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: SHOP-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0A%0ASedang dilakukan validasi pembayaran, silahkan tunggu beberapa saat.' ?> " target="_blank">
 															<div class="fs-4"><iconify-icon icon="logos:whatsapp-icon"></iconify-icon></div>
 														</a>
 													</span>
 												<?php }else { ?>
 													<span>
-														<a href="<?= 'https://wa.me/'.$inv->nomor. '?text=Pembelian Produk Toko Media Data Computer Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: SHOP-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0A%0APembayaran sudah tervalidasi.' ?>" target="_blank">
+														<a href="<?= 'https://wa.me/'.$inv->nomor. '?text=Pembelian Produk Toko Mondan Shop Pada Tanggal '.$inv->tgl_pesan.' Dengan Rincian :%0A%0AKode Pembelian: SHOP-INV-'.$inv->id.'%0ANama Lengkap: '.$inv->nama.'%0AAlamat : '.$inv->alamat.'%0A%0APembayaran sudah tervalidasi.' ?>" target="_blank">
 															<div class="fs-4"><iconify-icon icon="logos:whatsapp-icon"></iconify-icon></div>
 														</a>
 													</span>

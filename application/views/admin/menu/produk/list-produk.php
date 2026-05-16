@@ -27,7 +27,7 @@
                 <div class="card">
                   <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">Produk</h4>
+                        <h4 class="card-title">Management Produk</h4>
                         <a href="<?= base_url('admin/produk/tambah_produk') ?>"
                                 class="btn btn-primary btn-round ms-auto"
                             >
@@ -53,7 +53,7 @@
 	                                <th>Nama Barang</th>
 	                                <th>Merek</th>
 	                                <th>Harga</th>
-	                                <th>Stok</th>
+	                                <th>Status</th>
 	                                <th>Kategori</th>
 	                                <th>Gambar</th>
 	                                <th>Action</th>

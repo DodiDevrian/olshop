@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2026 at 03:32 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: May 16, 2026 at 03:34 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,19 +36,16 @@ CREATE TABLE `invoice` (
   `tgl_pesan` date NOT NULL,
   `gambar` varchar(225) NOT NULL,
   `status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `invoice`
 --
 
 INSERT INTO `invoice` (`id`, `id_user`, `nama`, `alamat`, `nomor`, `tgl_pesan`, `gambar`, `status`) VALUES
-(26, 4, 'Dodi Devrian Andrianto', 'Bandar Jaya', 6285788113563, '2022-11-18', 'bank-bca12.png', 'Menunggu Validasi'),
-(27, 4, 'Yusuf', 'Bandar Mataram', 6285788113563, '2022-11-18', 'bank-bca13.png', 'Selesai Validasi'),
-(31, 4, 'Dodi Devrian Andrianto', 'Bandar Jaya', 6285788113563, '2022-11-22', 'Tanah_Basah_Hujan.jpeg', 'Selesai Validasi'),
 (34, 13, 'ayu feblira gersy', 'teluk betung bandar lampung', 6285788113563, '2022-11-24', 'WhatsApp_Image_2022-06-27_at_11_35_18.jpeg', 'Selesai Validasi'),
-(37, 4, 'Samsudin', 'Tanggerang', 6285788113563, '2022-11-25', 'mugiwara-logo-303FD55C54-seeklogo_com.png', 'Menunggu Validasi'),
-(38, 15, 'Muhammad Asyroful Nur Maulana Yusuf', 'PERUM 1 GPM Blok F.500 RT001 RW008, MATARAMA UDIK,  BANDAR MATARAM, LAMPUNG TENGAH, LAMPUNG', 6285788113563, '2022-11-25', 'C2(SERIAL_MONITOR).jpg', 'Selesai Validasi');
+(46, 13, 'Mike Delhan', 'Yukum jaya', 628962874496, '2026-05-16', '7cbb4497b9c6adae1359c4739ffe18e4.png', 'Selesai Validasi'),
+(47, 13, 'Joy', 'Sukarame', 6289628744896, '2026-05-16', '4d3b4938958e71cab596e31fe4a82d41.jpg', 'Menunggu Validasi');
 
 -- --------------------------------------------------------
 
@@ -62,7 +59,7 @@ CREATE TABLE `payment` (
   `nama_penerima` varchar(500) NOT NULL,
   `nomor` varchar(500) NOT NULL,
   `logo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `payment`
@@ -70,7 +67,7 @@ CREATE TABLE `payment` (
 
 INSERT INTO `payment` (`id`, `nama_payment`, `nama_penerima`, `nomor`, `logo`) VALUES
 (1, 'Bank BCA', 'Dodi', '24637261235', 'bca.png'),
-(2, 'Bank BRI', 'Dodi', '156256371', 'bri.png');
+(2, 'Bank BRI', 'Joy', '156256371', 'bri.png');
 
 -- --------------------------------------------------------
 
@@ -86,7 +83,7 @@ CREATE TABLE `pesanan` (
   `tgl_pesan` date NOT NULL,
   `jumlah` int(25) NOT NULL,
   `harga` int(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pesanan`
@@ -121,7 +118,9 @@ INSERT INTO `pesanan` (`id`, `id_invoice`, `id_produk`, `nama_produk`, `tgl_pesa
 (53, 42, 77, 'Jaket Kulit Varcity', '2026-05-13', 1, 250000),
 (54, 43, 76, 'Hoodie Man City', '2026-05-13', 1, 135000),
 (55, 44, 77, 'Jaket Kulit Varcity', '2026-05-13', 1, 250000),
-(56, 45, 77, 'Jaket Kulit Varcity', '2026-05-13', 1, 250000);
+(56, 45, 77, 'Jaket Kulit Varcity', '2026-05-13', 1, 250000),
+(57, 46, 77, 'Jaket Kulit Varcity', '2026-05-16', 1, 250000),
+(58, 47, 82, 'Sepatu Sneakers', '2026-05-16', 1, 200000);
 
 --
 -- Triggers `pesanan`
@@ -149,7 +148,7 @@ CREATE TABLE `produk` (
   `detail_produk` longtext NOT NULL,
   `kategori` varchar(100) NOT NULL,
   `gambar` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `produk`
@@ -162,7 +161,10 @@ INSERT INTO `produk` (`id_produk`, `nama_produk`, `merek`, `harga`, `stok`, `det
 (75, 'Sweater Oversize Times Up', 'Times Up', '89000', 1, '<p>wewewgy ysgfsgf uysgfuysgf uysgdf</p>\r\n', 'sweater', 'Screenshot_20210717_013603.png'),
 (76, 'Hoodie Man City', 'Master Hoodie', '135000', 1, '<p>wewewgy ysgfsgf uysgfuysgf uysgdf</p>\r\n', 'jaketpria', 'FB_IMG_1657074757722-720x720.jpg'),
 (77, 'Jaket Kulit Varcity', 'Urband', '250000', 1, '<p>Ukuran XL</p>\r\n', 'jaketkulit', 'id-11134207-7rasi-m0kzqujdlgp8f8.jpeg'),
-(80, 'Kaos Distro', 'Aerostreet', '85000', 1, '<p>Ukuran XL</p>\r\n', 'tshirt', '1d5a9eb3f70f1db06390f56c36bc08653.jpeg');
+(80, 'Kaos Distro', 'Aerostreet', '85000', 1, '<p>Ukuran XL</p>\r\n', 'tshirt', '1d5a9eb3f70f1db06390f56c36bc08653.jpeg'),
+(81, 'Celana Jeans', 'Aerostreet', '150000', 1, '<p>Ukuran : XL</p>\r\n', 'jeans', 'images_(1).jpeg'),
+(82, 'Sepatu Sneakers', 'Power', '200000', 1, '<p>Ukuran : 42</p>\r\n', 'sepatu', '5281181_1.jpg'),
+(83, 'Celana Training', 'Under Armor', '80000', 1, '<p>Ukuran : XL</p>\r\n', 'olahraga', 'c270e9dbc18141ccfc5ccd89e361ddc9_jpg_720x720q80.jpg');
 
 -- --------------------------------------------------------
 
@@ -176,7 +178,7 @@ CREATE TABLE `user` (
   `nama_user` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
   `role` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
@@ -234,7 +236,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -246,13 +248,13 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id_produk` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `user`
