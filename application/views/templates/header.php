@@ -8,6 +8,7 @@
         <meta name="author" content="" />
         <title>Mondan Shop</title>
         <link href="<?= base_url('assets/frontend/') ?>css/styles.css" rel="stylesheet" />
+        <link href="<?php echo base_url()?>assets/css/style.css" rel="stylesheet">
         <link href="<?= base_url('assets/frontend/') ?>css/style-custom.css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>assets/img/favicon.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
