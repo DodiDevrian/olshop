@@ -124,7 +124,8 @@
                     <div class="col-lg">
                         <div class="p-5">
                             <div class="text-center">
-                                <img src="<?php echo base_url() ?>assets/img/logo.png" width="250" >
+                                <!-- <img src="<?php echo base_url() ?>assets/img/logo.png" width="250" > -->
+                                <h1 style="font-weight: bold; color: #3d63d2;">MONDAN SHOP</h1>
                                 <h1 class="h4 text-gray-900 mb-4">Daftar Akun!</h1>
                             </div>
                             <form class="user" method="post" action="<?php echo base_url('register') ?>">
