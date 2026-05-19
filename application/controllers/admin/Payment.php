@@ -74,4 +74,11 @@ class Payment extends CI_Controller{
 
 		redirect('admin/payment');
     }
+
+	public function delete($id){
+		$where = array('id' => $id);
+		$this->Model_payment->delete_payment($where, 'payment');
+		$this->session->set_flashdata('pesan', 'Data Pembayaran Berhasil Dihapus!');
+		redirect('admin/payment');
+	}
 }

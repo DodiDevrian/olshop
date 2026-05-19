@@ -69,7 +69,7 @@
 	                                <td align="center">
 	                                	<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ubahPayment<?php echo $brg->id ?>"><i class="fas fa-edit"></i></button>
 	                                	<span onclick="javascript: return confirm('Yakin Untuk Menghapus Data Ini?')">
-	                                		<?php echo anchor('admin/produk/delete/' .$brg->id, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></div>') ?>
+	                                		<?php echo anchor('admin/payment/delete/' .$brg->id, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></div>') ?>
 	                                	</span>
 	                                </td>
 	                            </tr>
