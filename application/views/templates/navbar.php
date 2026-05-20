@@ -6,7 +6,10 @@
             <!-- * * Tip * * You can use text or an image for your navbar brand.-->
             <!-- * * * * * * When using an image, we recommend the SVG format.-->
             <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-            <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">MONDAN SHOP</a>
+            <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="<?= base_url() ?>">
+                <span class="d-none d-md-inline">MONDAN SHOP</span>
+                <span class="d-inline d-md-none">MONDAN <br> SHOP</span>
+            </a>
             <!-- Navbar Search Input-->
             <!-- * * Note: * * Visible only on and above the lg breakpoint-->
             <form class="form-inline me-auto d-none d-lg-block me-3" action="<?php echo base_url('dashboard/search') ?>" method="post">
