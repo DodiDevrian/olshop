@@ -28,9 +28,6 @@ class Auth extends CI_Controller {
 				$this->session->set_userdata('role', $auth->role);
 				
 				switch($auth->role){
-					case 0 : redirect('owner/dashboard_owner');
-							 break;
-
 					case 1 : redirect('admin/produk');
 							 break;
 

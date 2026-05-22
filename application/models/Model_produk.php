@@ -2,8 +2,10 @@
 	
 class Model_produk extends CI_Model{
 	public function tampil_data($limit, $start){
-		return $this->db->order_by('id_produk', 'DESC')->get('produk', $limit, $start);
-	}
+        return $this->db->where('stok', 1)
+                        ->order_by('id_produk', 'DESC')
+                        ->get('produk', $limit, $start);
+    }
 
 	public function tampil_data_keranjang(){
 		return $this->db->get('produk');

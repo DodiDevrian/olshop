@@ -6,8 +6,8 @@
               </ul>
             </nav>
             <div class="copyright">
-              2024, made with <i class="fa fa-heart heart text-danger"></i> by
-              <a href="https://dodidev.my.id" target="_blank">DodiDev</a>
+              2026, made with <i class="fa fa-heart heart text-danger"></i> by
+              <a href="https://dodidev.my.id" target="_blank">Mondan Shop</a>
             </div>
             <div>
             </div>

@@ -12,7 +12,7 @@
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Tema</a>
+                  <a href="#">Produk</a>
                 </li>
                 <li class="separator">
                   <i class="icon-arrow-right"></i>
@@ -62,23 +62,19 @@
                             required
                             >
                                 <option value="" disable selected hidden>Pilih Kategori</option>
-                                <option value="tshirt">T-shirt</option>
-                                <option value="olahraga">Pakaian Olahraga</option>
                                 <option value="kemeja">Kemeja</option>
-                                <option value="jaketpria">Jaket Pria</option>
-                                <option value="jaketwanita">Jaket Wanita</option>
-                                <option value="jaketkulit">Jaket Kulit</option>
-                                <option value="sweater">Sweater</option>
-                                <option value="hoodie">Hoodie</option>
-                                <option value="flanel">Flanel</option>
+                                <option value="tshirt">T-shirt</option>
                                 <option value="jeans">Celana Jeans</option>
                                 <option value="kargo">Celana Kargo</option>
                                 <option value="chinos">Celana Chinos</option>
                                 <option value="bahan">Celana Bahan</option>
-                                <option value="jas">Jas</option>
-                                <option value="tempxkorea">Temp-x Korea</option>
-                                <option value="pakaiananak">Pakaian Anak</option>
+                                <option value="jaketpria">Jaket Pria</option>
+                                <option value="jaketwanita">Jaket Wanita</option>
+                                <option value="jaketkulit">Jaket Kulit</option>
+                                <option value="sweater">Sweater</option>
+                                <option value="olahraga">Pakaian Olahraga</option>
                                 <option value="pakaianwanita">Pakaian Wanita</option>
+                                <option value="pakaianpria">Pakaian Pria</option>
                                 <option value="sepatu">Sepatu</option>
                             </select>
                             <?php echo form_error('kategori', '<div class="text-danger small">', '</div>') ?>
