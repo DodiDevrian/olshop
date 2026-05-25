@@ -6,7 +6,7 @@
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
             <a href="<?php echo base_url(); ?>assets/backend/index.html" class="logo">
-              <h4 class="text-light">ADMIN OLSHOP</h4>
+              <h4 class="text-light">MONDAN SHOP</h4>
             </a>
             <div class="nav-toggle">
               <button class="btn btn-toggle toggle-sidebar">
